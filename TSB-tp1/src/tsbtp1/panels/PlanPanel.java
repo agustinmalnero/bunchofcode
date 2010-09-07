@@ -15,7 +15,7 @@ package tsbtp1.panels;
  *
  * @author gato
  */
-public class PlanPanel extends javax.swing.JPanel implements IPanels {
+public class PlanPanel extends javax.swing.JPanel implements IPanel {
 
     /** Creates new form PlanPanel */
     public PlanPanel() {

@@ -15,7 +15,7 @@ package tsbtp1.panels;
  *
  * @author gato
  */
-public class CiudadPanel extends javax.swing.JPanel implements IPanels {
+public class CiudadPanel extends javax.swing.JPanel implements IPanel {
 
     /** Creates new form CiudadPanel */
     public CiudadPanel() {

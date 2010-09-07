@@ -4,6 +4,6 @@ package tsbtp1.panels;
  *
  * @author gato
  */
-public interface IPanels {
+public interface IPanel {
 
 }

@@ -18,19 +18,16 @@ public class SimpleList<T extends Comparable> {
     }
 
     public void add(T t){
-        boolean exists = false;
         Iterator<T> it = iterator();
         Comparable value = null;
         while (it.hasNext()){
             value = it.next();
             if (value.compareTo(t) == 0)
-                exists = true;
+                return;
         }
-        if (!exists){
-            Node p = new Node(t);
-            p.next=front;
-            front = p;
-        }
+        Node p = new Node(t);
+        p.next=front;
+        front = p;
     }
 
     public boolean remove(T t){
