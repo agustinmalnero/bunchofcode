@@ -4,9 +4,8 @@ package tsbtp1.model;
  *
  * @author Diego Sarmentero
  */
-public class Plan {
+public class Plan implements Comparable<Plan>{
 
-    private int id;
     private double cuota;
     private Ciudad destino;
 
@@ -18,10 +17,6 @@ public class Plan {
         this.destino = destino;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public double getCuota() {
         return cuota;
     }
@@ -30,8 +25,12 @@ public class Plan {
         return destino;
     }
 
-    public int getId() {
-        return id;
+    public int compareTo(Plan p){
+        if(p.getCuota() == this.cuota &&
+                p.getDestino().getNombre().equalsIgnoreCase(this.destino.getNombre())){
+            return 0;
+        }
+        return 1;
     }
 
 }

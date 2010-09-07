@@ -29,7 +29,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="txtCuota" pref="305" max="32767" attributes="0"/>
+                  <Component id="txtFormatCuota" pref="305" max="32767" attributes="0"/>
                   <Component id="comboDestino" alignment="0" pref="305" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -47,9 +47,9 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtCuota" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtFormatCuota" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="45" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -72,7 +72,13 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtCuota">
+    <Component class="javax.swing.JFormattedTextField" name="txtFormatCuota">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="b4" green="17" red="18" type="rgb"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

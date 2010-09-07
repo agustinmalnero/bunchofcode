@@ -4,15 +4,10 @@ package tsbtp1.model;
  *
  * @author Diego Sarmentero
  */
-public class Viaje {
+public class Viaje implements Comparable<Viaje>{
 
-    private int id;
     private Pasajero pasajero;
     private Plan plan;
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public void setPasajero(Pasajero pasajero) {
         this.pasajero = pasajero;
@@ -22,16 +17,20 @@ public class Viaje {
         this.plan = plan;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public Pasajero getPasajero() {
         return pasajero;
     }
 
     public Plan getPlan() {
         return plan;
+    }
+
+    public int compareTo(Viaje v){
+        if(this.plan.compareTo(v.getPlan()) == 0 &&
+                this.pasajero.compareTo(v.getPasajero()) == 0){
+            return 0;
+        }
+        return -1;
     }
 
 }

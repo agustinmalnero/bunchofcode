@@ -8,7 +8,7 @@ import tsbtp1.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        SimpleList<Integer> l = new SimpleList<Integer>();
+        /*SimpleList<Integer> l = new SimpleList<Integer>();
         l.add(1);
         System.out.println("agregado 1");
         l.add(1);
@@ -29,7 +29,9 @@ public class Main {
             System.out.println("removido 3");
         else System.out.println("no removido 3");
         while (it.hasNext())
-            System.out.println(it.next());
+            System.out.println(it.next());*/
+        AgenciaFrame agencia = new AgenciaFrame();
+        agencia.setVisible(true);
     }
 
 }

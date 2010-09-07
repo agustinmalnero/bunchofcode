@@ -68,9 +68,7 @@ public class SimpleList<T extends Comparable> {
         public SimpleListIterator(){
             actual = front;
         }
-
-
-
+        
         public boolean hasNext(){
             if (actual!=null)
                 return true;

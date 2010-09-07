@@ -1,12 +1,7 @@
 package tsbtp1.model;
 
-/**
- *
- * @author Diego Sarmentero
- */
-public class Pasajero {
+public class Pasajero implements Comparable<Pasajero>{
 
-    private int id;
     private String dni;
     private String apellido;
     private String nombre;
@@ -17,10 +12,6 @@ public class Pasajero {
 
     public void setDni(String dni) {
         this.dni = dni;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setNombre(String nombre) {
@@ -35,12 +26,15 @@ public class Pasajero {
         return dni;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public String getNombre() {
         return nombre;
+    }
+
+    public int compareTo(Pasajero p){
+        if(p.getDni().equalsIgnoreCase(this.dni)){
+            return 0;
+        }
+        return 1;
     }
 
 }
