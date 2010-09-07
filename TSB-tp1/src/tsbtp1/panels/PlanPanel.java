@@ -15,7 +15,7 @@ package tsbtp1.panels;
  *
  * @author gato
  */
-public class PlanPanel extends javax.swing.JPanel {
+public class PlanPanel extends javax.swing.JPanel implements IPanels {
 
     /** Creates new form PlanPanel */
     public PlanPanel() {
@@ -35,6 +35,8 @@ public class PlanPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         comboDestino = new javax.swing.JComboBox();
         txtCuota = new javax.swing.JTextField();
+
+        setPreferredSize(new java.awt.Dimension(400, 117));
 
         jLabel1.setText("Destino:");
 

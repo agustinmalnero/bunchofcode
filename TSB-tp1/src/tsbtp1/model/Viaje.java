@@ -4,7 +4,7 @@ package tsbtp1.model;
  *
  * @author Diego Sarmentero
  */
-public class Paciente {
+public class Viaje {
 
     private int id;
     private Pasajero pasajero;

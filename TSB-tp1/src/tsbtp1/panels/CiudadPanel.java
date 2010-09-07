@@ -15,7 +15,7 @@ package tsbtp1.panels;
  *
  * @author gato
  */
-public class CiudadPanel extends javax.swing.JPanel {
+public class CiudadPanel extends javax.swing.JPanel implements IPanels {
 
     /** Creates new form CiudadPanel */
     public CiudadPanel() {
@@ -33,6 +33,8 @@ public class CiudadPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
+
+        setPreferredSize(new java.awt.Dimension(400, 117));
 
         jLabel1.setText("Nombre:");
 

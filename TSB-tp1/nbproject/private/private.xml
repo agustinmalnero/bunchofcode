@@ -1,15 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/home/gato/NetBeansProjects/TSB-tp1/src/tsbtp1/Main.java</file>
-        <file>file:/home/gato/NetBeansProjects/TSB-tp1/src/tsbtp1/panels/CiudadPanel.java</file>
-        <file>file:/home/gato/NetBeansProjects/TSB-tp1/src/tsbtp1/panels/PasajeroPanel.java</file>
-        <file>file:/home/gato/NetBeansProjects/TSB-tp1/src/tsbtp1/panels/IPanels.java</file>
-        <file>file:/home/gato/NetBeansProjects/TSB-tp1/src/tsbtp1/panels/PlanPanel.java</file>
-        <file>file:/home/gato/NetBeansProjects/TSB-tp1/src/tsbtp1/model/Pasajero.java</file>
-        <file>file:/home/gato/NetBeansProjects/TSB-tp1/src/tsbtp1/model/Plan.java</file>
-        <file>file:/home/gato/NetBeansProjects/TSB-tp1/src/tsbtp1/model/Ciudad.java</file>
-        <file>file:/home/gato/NetBeansProjects/TSB-tp1/src/tsbtp1/model/Paciente.java</file>
-    </open-files>
 </project-private>
