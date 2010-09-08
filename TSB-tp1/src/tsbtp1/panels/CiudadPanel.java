@@ -16,12 +16,18 @@ public class CiudadPanel extends javax.swing.JPanel implements IPanel {
         Ciudad c = new Ciudad();
         c.setNombre(this.txtNombre.getText());
         this.list.add(c);
+        this.clear();
     }
 
     public void eliminar(){
         Ciudad c = new Ciudad();
         c.setNombre(this.txtNombre.getText());
         this.list.remove(c);
+        this.clear();
+    }
+
+    public void clear(){
+        this.txtNombre.setText("");
     }
 
     @SuppressWarnings("unchecked")

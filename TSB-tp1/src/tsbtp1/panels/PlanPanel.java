@@ -1,30 +1,53 @@
 package tsbtp1.panels;
 
 import javax.swing.text.MaskFormatter;
+import tsbtp1.model.Ciudad;
+import tsbtp1.model.Plan;
+import tsbtp1.util.Iterator;
 import tsbtp1.util.SimpleList;
 
 public class PlanPanel extends javax.swing.JPanel implements IPanel {
 
     private SimpleList list;
 
-    public PlanPanel(SimpleList l) {
+    public PlanPanel(SimpleList l, SimpleList<Ciudad> ciudades) {
         initComponents();
         this.list = l;
 
         try {
-            MaskFormatter mask = new MaskFormatter("######.##");
+            MaskFormatter mask = new MaskFormatter("####.##");
             mask.install(txtFormatCuota);
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        Iterator i = ciudades.iterator();
+        while(i.hasNext()){
+            this.comboDestino.addItem(i.next());
+        }
     }
 
     public void guardar(){
-        
+        Plan p = new Plan();
+        String monto = this.txtFormatCuota.getText().replaceAll(" ", "");
+        p.setCuota(Double.parseDouble(monto));
+        p.setDestino((Ciudad)this.comboDestino.getItemAt(this.comboDestino.getSelectedIndex()));
+        this.list.add(p);
+        this.clear();
     }
 
     public void eliminar(){
+        Plan p = new Plan();
+        String monto = this.txtFormatCuota.getText().replaceAll(" ", "");
+        p.setCuota(Double.parseDouble(monto));
+        p.setDestino((Ciudad)this.comboDestino.getItemAt(this.comboDestino.getSelectedIndex()));
+        this.list.remove(p);
+        this.clear();
+    }
 
+    public void clear(){
+        this.txtFormatCuota.setText("");
+        this.comboDestino.setSelectedIndex(0);
     }
 
     @SuppressWarnings("unchecked")

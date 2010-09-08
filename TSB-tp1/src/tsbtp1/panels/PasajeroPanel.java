@@ -1,5 +1,7 @@
 package tsbtp1.panels;
 
+import javax.swing.text.MaskFormatter;
+import tsbtp1.model.Pasajero;
 import tsbtp1.util.SimpleList;
 
 public class PasajeroPanel extends javax.swing.JPanel implements IPanel {
@@ -9,14 +11,37 @@ public class PasajeroPanel extends javax.swing.JPanel implements IPanel {
     public PasajeroPanel(SimpleList l) {
         initComponents();
         this.list = l;
+
+        try {
+            MaskFormatter mask = new MaskFormatter("########");
+            mask.install(txtFormattedDNI);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void guardar(){
-
+        Pasajero p = new Pasajero();
+        p.setNombre(this.txtNombre.getText());
+        p.setApellido(this.txtApellido.getText());
+        p.setDni(this.txtFormattedDNI.getText().trim());
+        this.list.add(p);
+        this.clear();
     }
 
     public void eliminar(){
+        Pasajero p = new Pasajero();
+        p.setNombre(this.txtNombre.getText());
+        p.setApellido(this.txtApellido.getText());
+        p.setDni(this.txtFormattedDNI.getText().trim());
+        this.list.remove(p);
+        this.clear();
+    }
 
+    public void clear(){
+        this.txtApellido.setText("");
+        this.txtFormattedDNI.setText("");
+        this.txtNombre.setText("");
     }
 
     @SuppressWarnings("unchecked")

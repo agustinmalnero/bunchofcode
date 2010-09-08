@@ -16,6 +16,10 @@ public class Ciudad implements Comparable<Ciudad>{
         return nombre;
     }
 
+    public String toString(){
+        return this.nombre;
+    }
+
     public int compareTo(Ciudad c){
         if(c.getNombre().equalsIgnoreCase(this.nombre)){
             return 0;

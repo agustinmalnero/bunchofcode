@@ -20,7 +20,7 @@ import tsbtp1.model.Viaje;
 import tsbtp1.panels.CiudadPanel;
 import tsbtp1.panels.PasajeroPanel;
 import tsbtp1.panels.PlanPanel;
-import tsbtp1.util.Iterator;
+import tsbtp1.panels.ViajePanel;
 import tsbtp1.util.SimpleList;
 
 /**
@@ -246,7 +246,7 @@ public class AgenciaFrame extends javax.swing.JFrame {
 
     private void btnPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlanActionPerformed
         this.selectedButton(Mode.PLAN);
-        PlanPanel plan = new PlanPanel(this.planList);
+        PlanPanel plan = new PlanPanel(this.planList, this.ciudadList);
         iPanel = plan;
         this.panelCargas.add(plan);
         this.panelCargas.updateUI();
@@ -254,7 +254,10 @@ public class AgenciaFrame extends javax.swing.JFrame {
 
     private void btnViajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViajeActionPerformed
         this.selectedButton(Mode.VIAJE);
-        
+        ViajePanel viaje = new ViajePanel(this.viajeList, this.planList, this.pasajeroList);
+        iPanel = viaje;
+        this.panelCargas.add(viaje);
+        this.panelCargas.updateUI();
     }//GEN-LAST:event_btnViajeActionPerformed
 
     private void btnCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCiudadActionPerformed
@@ -271,6 +274,7 @@ public class AgenciaFrame extends javax.swing.JFrame {
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.panelCargas.removeAll();
+        this.panelCargas.updateUI();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void selectedButton(Mode mode){

@@ -6,4 +6,6 @@ public interface IPanel {
 
     public void eliminar();
 
+    public void clear();
+
 }

@@ -37,4 +37,8 @@ public class Pasajero implements Comparable<Pasajero>{
         return 1;
     }
 
+    public String toString(){
+        return this.dni + " - " + this.apellido + ", " + this.nombre;
+    }
+
 }

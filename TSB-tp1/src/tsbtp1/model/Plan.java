@@ -33,4 +33,8 @@ public class Plan implements Comparable<Plan>{
         return 1;
     }
 
+    public String toString(){
+        return this.destino + " - " + this.cuota;
+    }
+
 }
