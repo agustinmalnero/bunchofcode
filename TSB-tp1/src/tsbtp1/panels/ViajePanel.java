@@ -1,6 +1,6 @@
 package tsbtp1.panels;
 
-import tsbtp1.model.Ciudad;
+import javax.swing.JOptionPane;
 import tsbtp1.model.Pasajero;
 import tsbtp1.model.Plan;
 import tsbtp1.model.Viaje;
@@ -31,28 +31,37 @@ public class ViajePanel extends javax.swing.JPanel implements IPanel{
     }
 
     public void guardar(){
-        Viaje v = new Viaje();
-        v.setPlan((Plan)this.comboPlan.getItemAt(this.comboPlan.getSelectedIndex()));
-        v.setPasajero((Pasajero)this.comboPasajero.getItemAt(this.comboPasajero.getSelectedIndex()));
-        this.list.add(v);
-        this.clear();
+        if(this.validateData()){
+            Viaje v = new Viaje();
+            v.setPlan((Plan)this.comboPlan.getItemAt(this.comboPlan.getSelectedIndex()));
+            v.setPasajero((Pasajero)this.comboPasajero.getItemAt(this.comboPasajero.getSelectedIndex()));
+            this.list.add(v);
+            this.clear();
+        }else{
+            JOptionPane.showMessageDialog(this, "Complete la información necesaria.",
+                    "Viaje No Valido", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public void eliminar(){
-        /*Viaje v = new Viaje();
+        Viaje v = new Viaje();
         v.setPlan((Plan)this.comboPlan.getItemAt(this.comboPlan.getSelectedIndex()));
         v.setPasajero((Pasajero)this.comboPasajero.getItemAt(this.comboPasajero.getSelectedIndex()));
         this.list.remove(v);
-        this.clear();*/
-        Iterator i = this.list.iterator();
-        while(i.hasNext()){
-            System.out.println(i.next());
-        }
+        this.clear();
     }
 
     public void clear(){
         this.comboPasajero.setSelectedIndex(0);
         this.comboPlan.setSelectedIndex(0);
+    }
+
+    public boolean validateData(){
+        if(this.comboPasajero.getSelectedItem() != null &&
+                this.comboPlan.getSelectedItem() != null){
+            return true;
+        }
+        return false;
     }
 
     @SuppressWarnings("unchecked")

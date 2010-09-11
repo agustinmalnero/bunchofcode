@@ -29,9 +29,9 @@ public class Main {
             System.out.println("removido 3");
         else System.out.println("no removido 3");
         while (it.hasNext())
-            System.out.println(it.next());
+            System.out.println(it.next());*/
         AgenciaFrame agencia = new AgenciaFrame();
-        agencia.setVisible(true);*/
+        agencia.setVisible(true);
         System.out.println("Ordenar...");
         l.ordenar();
         System.out.println("Finalizó Ordenar.");

@@ -29,16 +29,16 @@ public class PlanPanel extends javax.swing.JPanel implements IPanel {
     }
 
     public void guardar(){
-        Plan p = new Plan();
-        String monto = this.txtFormatCuota.getText().replaceAll(" ", "");
-        if(monto.equalsIgnoreCase(".")){
-            JOptionPane.showMessageDialog(this, "Debe ingresar un monto para este plan.",
-                    "Monto No Valido", JOptionPane.ERROR_MESSAGE);
-        }else{
+        if(validateData()){
+            Plan p = new Plan();
+            String monto = this.txtFormatCuota.getText().replaceAll(" ", "");
             p.setCuota(Double.parseDouble(monto));
             p.setDestino((Ciudad)this.comboDestino.getItemAt(this.comboDestino.getSelectedIndex()));
             this.list.add(p);
             this.clear();
+        }else{
+            JOptionPane.showMessageDialog(this, "Debe ingresar un destino y un monto.",
+                    "Plan No Valido", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -54,6 +54,14 @@ public class PlanPanel extends javax.swing.JPanel implements IPanel {
     public void clear(){
         this.txtFormatCuota.setText("");
         this.comboDestino.setSelectedIndex(0);
+    }
+
+    public boolean validateData(){
+        if(!this.txtFormatCuota.getText().replaceAll(" ", "").equalsIgnoreCase(".") &&
+                this.comboDestino.getSelectedItem() != null){
+            return true;
+        }
+        return false;
     }
 
     @SuppressWarnings("unchecked")

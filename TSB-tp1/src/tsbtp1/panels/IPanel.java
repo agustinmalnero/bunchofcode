@@ -8,4 +8,6 @@ public interface IPanel {
 
     public void clear();
 
+    public boolean validateData();
+
 }
