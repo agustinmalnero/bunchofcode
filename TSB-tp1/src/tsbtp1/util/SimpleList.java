@@ -129,7 +129,7 @@ public class SimpleList<T extends Comparable> {
         ordenarQuicksort(array, 0, size - 1);
         return array;
     }
-<<<<<<< local
+
 
     public boolean find(Comparable c){
         Iterator it = iterator();
@@ -153,6 +153,4 @@ public class SimpleList<T extends Comparable> {
         return l.find(c);
     }
 
-=======
->>>>>>> other
 }
