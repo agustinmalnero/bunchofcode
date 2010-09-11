@@ -21,6 +21,7 @@ import tsbtp1.panels.CiudadPanel;
 import tsbtp1.panels.PasajeroPanel;
 import tsbtp1.panels.PlanPanel;
 import tsbtp1.panels.ViajePanel;
+import tsbtp1.util.Funciones;
 import tsbtp1.util.SimpleList;
 
 /**
@@ -64,9 +65,16 @@ public class AgenciaFrame extends javax.swing.JFrame {
         btnViaje = new javax.swing.JToggleButton();
         btnCiudad = new javax.swing.JToggleButton();
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
         toolConsultas = new javax.swing.JToolBar();
         btnBuscar = new javax.swing.JButton();
+        btnPasajeroConsulta = new javax.swing.JToggleButton();
+        btnPlanConsulta = new javax.swing.JToggleButton();
+        btnViajeConsulta = new javax.swing.JToggleButton();
+        btnCiudadConsulta = new javax.swing.JToggleButton();
+        jSeparator3 = new javax.swing.JSeparator();
+        panelCargas1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTablaConsulta = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,7 +86,7 @@ public class AgenciaFrame extends javax.swing.JFrame {
         );
         panelCargasLayout.setVerticalGroup(
             panelCargasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 299, Short.MAX_VALUE)
+            .addGap(0, 310, Short.MAX_VALUE)
         );
 
         toolCargas.setFloatable(false);
@@ -166,7 +174,7 @@ public class AgenciaFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelCargas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnPasajero)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -181,17 +189,6 @@ public class AgenciaFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Cargas", jPanel1);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 612, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
-        );
-
         toolConsultas.setFloatable(false);
         toolConsultas.setRollover(true);
 
@@ -201,22 +198,90 @@ public class AgenciaFrame extends javax.swing.JFrame {
         btnBuscar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         toolConsultas.add(btnBuscar);
 
+        btnPasajeroConsulta.setText("Pasajero");
+        btnPasajeroConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPasajeroConsultaActionPerformed(evt);
+            }
+        });
+
+        btnPlanConsulta.setText("Plan");
+        btnPlanConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlanConsultaActionPerformed(evt);
+            }
+        });
+
+        btnViajeConsulta.setText("Viaje");
+        btnViajeConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViajeConsultaActionPerformed(evt);
+            }
+        });
+
+        btnCiudadConsulta.setText("Ciudad");
+        btnCiudadConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCiudadConsultaActionPerformed(evt);
+            }
+        });
+
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jTablaConsulta.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(jTablaConsulta);
+
+        javax.swing.GroupLayout panelCargas1Layout = new javax.swing.GroupLayout(panelCargas1);
+        panelCargas1.setLayout(panelCargas1Layout);
+        panelCargas1Layout.setHorizontalGroup(
+            panelCargas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE)
+        );
+        panelCargas1Layout.setVerticalGroup(
+            panelCargas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addComponent(toolConsultas, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnPasajeroConsulta)
+                    .addComponent(btnPlanConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                    .addComponent(btnViajeConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                    .addComponent(btnCiudadConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelCargas1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnPasajeroConsulta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnPlanConsulta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnViajeConsulta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCiudadConsulta))
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                    .addComponent(panelCargas1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(toolConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -230,7 +295,7 @@ public class AgenciaFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
         );
 
         pack();
@@ -277,6 +342,22 @@ public class AgenciaFrame extends javax.swing.JFrame {
         this.panelCargas.updateUI();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    private void btnPasajeroConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPasajeroConsultaActionPerformed
+        Funciones.loadTable(jTablaConsulta, pasajeroList);
+    }//GEN-LAST:event_btnPasajeroConsultaActionPerformed
+
+    private void btnPlanConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlanConsultaActionPerformed
+        Funciones.loadTable(jTablaConsulta, planList);
+    }//GEN-LAST:event_btnPlanConsultaActionPerformed
+
+    private void btnViajeConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViajeConsultaActionPerformed
+        Funciones.loadTable(jTablaConsulta, viajeList);
+    }//GEN-LAST:event_btnViajeConsultaActionPerformed
+
+    private void btnCiudadConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCiudadConsultaActionPerformed
+        Funciones.loadTable(jTablaConsulta, ciudadList);
+    }//GEN-LAST:event_btnCiudadConsultaActionPerformed
+
     private void selectedButton(Mode mode){
         this.panelCargas.removeAll();
         this.btnPasajero.setSelected(false);
@@ -299,18 +380,25 @@ public class AgenciaFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JToggleButton btnCiudad;
+    private javax.swing.JToggleButton btnCiudadConsulta;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JToggleButton btnPasajero;
+    private javax.swing.JToggleButton btnPasajeroConsulta;
     private javax.swing.JToggleButton btnPlan;
+    private javax.swing.JToggleButton btnPlanConsulta;
     private javax.swing.JToggleButton btnViaje;
+    private javax.swing.JToggleButton btnViajeConsulta;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTablaConsulta;
     private javax.swing.JPanel panelCargas;
+    private javax.swing.JPanel panelCargas1;
     private javax.swing.JToolBar toolCargas;
     private javax.swing.JToolBar toolConsultas;
     // End of variables declaration//GEN-END:variables

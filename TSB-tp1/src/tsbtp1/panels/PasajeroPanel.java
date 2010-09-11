@@ -42,6 +42,7 @@ public class PasajeroPanel extends javax.swing.JPanel implements IPanel {
         this.txtApellido.setText("");
         this.txtFormattedDNI.setText("");
         this.txtNombre.setText("");
+        this.txtNombre.requestFocus();
     }
 
     @SuppressWarnings("unchecked")
