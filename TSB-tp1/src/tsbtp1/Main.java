@@ -8,16 +8,16 @@ import tsbtp1.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        SimpleList<String> l = new SimpleList<String>();
-        l.add("1");
+        SimpleList<Integer> l = new SimpleList<Integer>();
+        l.add(1);
         System.out.println("agregado 1");
-        l.add("4");
+        l.add(4);
         System.out.println("agregado 4");
-        l.add("11");
+        l.add(11);
         System.out.println("agregado 11");
-        l.add("7");
+        l.add(7);
         System.out.println("agregado 7");
-        Iterator<String> it = l.iterator();
+        Iterator<Integer> it = l.iterator();
         while (it.hasNext())
             System.out.println(it.next());
         /*while (it.hasNext())
@@ -29,14 +29,15 @@ public class Main {
             System.out.println("removido 3");
         else System.out.println("no removido 3");
         while (it.hasNext())
-            System.out.println(it.next());*/
-        AgenciaFrame agencia = new AgenciaFrame();
-        agencia.setVisible(true);
-        System.out.println("Ordenar...");
-        l.ordenar();
-        System.out.println("Finalizó Ordenar.");
-        while (it.hasNext())
             System.out.println(it.next());
+        AgenciaFrame agencia = new AgenciaFrame();
+        agencia.setVisible(true);*/
+        System.out.println("Ordenar...");
+        Comparable[] array = l.ordenar();
+        System.out.println("Finalizó Ordenar.");
+        for(Comparable c : array){
+            System.out.println(c);
+        }
     }
 
 }
