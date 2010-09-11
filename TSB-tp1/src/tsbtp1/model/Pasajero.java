@@ -6,6 +6,15 @@ public class Pasajero implements Comparable<Pasajero>{
     private String apellido;
     private String nombre;
 
+    public Pasajero() {
+    }
+
+    public Pasajero(String dni, String apellido, String nombre) {
+        this.dni = dni;
+        this.apellido = apellido;
+        this.nombre = nombre;
+    }
+
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }

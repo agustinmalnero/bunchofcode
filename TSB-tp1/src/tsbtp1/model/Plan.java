@@ -26,11 +26,7 @@ public class Plan implements Comparable<Plan>{
     }
 
     public int compareTo(Plan p){
-        if(p.getCuota() == this.cuota &&
-                p.getDestino().getNombre().equalsIgnoreCase(this.destino.getNombre())){
-            return 0;
-        }
-        return 1;
+        return this.destino.getNombre().compareTo(p.getDestino().getNombre());
     }
 
     public String toString(){

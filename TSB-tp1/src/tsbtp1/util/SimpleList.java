@@ -50,7 +50,7 @@ public class SimpleList<T extends Comparable> {
         }
         return false;
     }
-    
+
     public Iterator<T> iterator() {
         return new SimpleListIterator<T>();
     }
@@ -108,7 +108,7 @@ public class SimpleList<T extends Comparable> {
             while (array[l].compareTo(middle) > 0) {
                 l--;
             }
-            if (f < l) {
+            if (f <= l) {
                 aux = array[l];
                 array[l] = array[f];
                 array[f] = aux;
@@ -130,26 +130,28 @@ public class SimpleList<T extends Comparable> {
         return array;
     }
 
-
-    public boolean find(Comparable c){
+    public boolean find(Comparable c) {
         Iterator it = iterator();
         Comparable aux = null;
         int i = 0;
-        while (it.hasNext() && i<size/2){
+        while (it.hasNext() && i < size / 2) {
             aux = it.next();
             i++;
         }
-        if(c.compareTo(aux)==0)
+        if (c.compareTo(aux) == 0) {
             return true;
+        }
         SimpleList<Comparable> l = new SimpleList();
-        if(c.compareTo(aux)<0){
-            while(it.hasNext())
+        if (c.compareTo(aux) < 0) {
+            while (it.hasNext()) {
                 l.add(it.next());
+            }
             return l.find(c);
         }
         it = iterator();
-        while(it.hasNext() && i<size/2)
+        while (it.hasNext() && i < size / 2) {
             l.add(it.next());
+        }
         return l.find(c);
     }
 

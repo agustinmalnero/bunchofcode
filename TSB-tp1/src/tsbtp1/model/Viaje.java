@@ -26,11 +26,7 @@ public class Viaje implements Comparable<Viaje>{
     }
 
     public int compareTo(Viaje v){
-        if(this.plan.compareTo(v.getPlan()) == 0 &&
-                this.pasajero.compareTo(v.getPasajero()) == 0){
-            return 0;
-        }
-        return -1;
+        return this.plan.getDestino().getNombre().compareTo(v.getPlan().getDestino().getNombre());
     }
 
 }
