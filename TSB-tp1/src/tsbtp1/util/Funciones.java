@@ -6,6 +6,7 @@ import java.lang.reflect.Method;
 import java.util.Vector;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import tsbtp1.model.Viaje;
 
 public class Funciones {
 
@@ -47,6 +48,29 @@ public class Funciones {
 
         model = new DefaultTableModel(data, columns);
         tabla.setModel(model);
+    }
+
+    public static void revenue(JTable table, SimpleList<Viaje> viajes){
+        DefaultTableModel model;
+        Object[] columns = new Object[]{"Detalle", "Cantidad"};
+        Object[][] data = new Object[2][2];
+
+        Iterator it = viajes.iterator();
+        double amount = 0;
+        int cant = 0;
+        while(it.hasNext()){
+            Object obj = it.next();
+            amount += ((Viaje)obj).getPlan().getCuota();
+            cant++;
+        }
+
+        Object[] row1 = new Object[]{"Cantidad de Viajes:", cant};
+        Object[] row2 = new Object[]{"Ingresos obtenidos:", amount};
+        data[0] = row1;
+        data[1] = row2;
+
+        model = new DefaultTableModel(data, columns);
+        table.setModel(model);
     }
 
 }

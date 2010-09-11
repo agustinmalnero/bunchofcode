@@ -135,14 +135,6 @@
                 </Component>
                 <Component class="javax.swing.JToolBar$Separator" name="jSeparator1">
                 </Component>
-                <Component class="javax.swing.JButton" name="btnModificar">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Modificar"/>
-                    <Property name="focusable" type="boolean" value="false"/>
-                    <Property name="horizontalTextPosition" type="int" value="0"/>
-                    <Property name="verticalTextPosition" type="int" value="3"/>
-                  </Properties>
-                </Component>
               </SubComponents>
             </Container>
             <Component class="javax.swing.JSeparator" name="jSeparator2">
@@ -199,10 +191,11 @@
                   <Component id="toolConsultas" alignment="0" pref="636" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnPasajeroConsulta" min="-2" max="-2" attributes="1"/>
-                          <Component id="btnPlanConsulta" pref="68" max="32767" attributes="1"/>
-                          <Component id="btnViajeConsulta" pref="68" max="32767" attributes="1"/>
-                          <Component id="btnCiudadConsulta" alignment="0" pref="68" max="32767" attributes="1"/>
+                          <Component id="btnPlanConsulta" pref="76" max="32767" attributes="1"/>
+                          <Component id="btnViajeConsulta" pref="76" max="32767" attributes="1"/>
+                          <Component id="btnCiudadConsulta" alignment="0" pref="76" max="32767" attributes="1"/>
+                          <Component id="btnPasajeroConsulta" alignment="0" pref="76" max="32767" attributes="1"/>
+                          <Component id="btnIngresos" pref="76" max="32767" attributes="1"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator3" min="-2" pref="7" max="-2" attributes="0"/>
@@ -225,6 +218,8 @@
                               <Component id="btnViajeConsulta" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnCiudadConsulta" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnIngresos" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jSeparator3" alignment="0" pref="310" max="32767" attributes="1"/>
                           <Component id="panelCargas1" alignment="0" min="0" max="32767" attributes="1"/>
@@ -296,7 +291,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane1" alignment="0" pref="537" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" alignment="0" pref="529" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -324,6 +319,14 @@
                 </Container>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JToggleButton" name="btnIngresos">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ingresos"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngresosActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
