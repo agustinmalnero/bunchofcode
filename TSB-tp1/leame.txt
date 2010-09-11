@@ -1,0 +1,6 @@
+Integrantes del grupo:
+
+51259 Diego Sarmentero.
+53904 Santiago Marietti.
+
+Ide utilizado: Netbeans.
