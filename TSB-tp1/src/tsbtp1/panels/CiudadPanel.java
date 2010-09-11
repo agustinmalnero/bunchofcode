@@ -1,5 +1,6 @@
 package tsbtp1.panels;
 
+import javax.swing.JOptionPane;
 import tsbtp1.model.Ciudad;
 import tsbtp1.util.SimpleList;
 
@@ -13,10 +14,15 @@ public class CiudadPanel extends javax.swing.JPanel implements IPanel {
     }
 
     public void guardar(){
-        Ciudad c = new Ciudad();
-        c.setNombre(this.txtNombre.getText());
-        this.list.add(c);
-        this.clear();
+        if(this.validateData()){
+            Ciudad c = new Ciudad();
+            c.setNombre(this.txtNombre.getText());
+            this.list.add(c);
+            this.clear();
+        }else{
+            JOptionPane.showMessageDialog(this, "Debe ingresar el nombre de una ciudad.",
+                    "Ciudad No Valida", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public void eliminar(){
@@ -24,6 +30,13 @@ public class CiudadPanel extends javax.swing.JPanel implements IPanel {
         c.setNombre(this.txtNombre.getText());
         this.list.remove(c);
         this.clear();
+    }
+
+    public boolean validateData(){
+        if(this.txtNombre.getText().length() > 0){
+            return true;
+        }
+        return false;
     }
 
     public void clear(){

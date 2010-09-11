@@ -1,5 +1,6 @@
 package tsbtp1.panels;
 
+import javax.swing.JOptionPane;
 import javax.swing.text.MaskFormatter;
 import tsbtp1.model.Pasajero;
 import tsbtp1.util.SimpleList;
@@ -21,12 +22,17 @@ public class PasajeroPanel extends javax.swing.JPanel implements IPanel {
     }
 
     public void guardar(){
-        Pasajero p = new Pasajero();
-        p.setNombre(this.txtNombre.getText());
-        p.setApellido(this.txtApellido.getText());
-        p.setDni(this.txtFormattedDNI.getText().trim());
-        this.list.add(p);
-        this.clear();
+        if(this.validateData()){
+            Pasajero p = new Pasajero();
+            p.setNombre(this.txtNombre.getText());
+            p.setApellido(this.txtApellido.getText());
+            p.setDni(this.txtFormattedDNI.getText().trim());
+            this.list.add(p);
+            this.clear();
+        }else{
+            JOptionPane.showMessageDialog(this, "Debe ingresar todos los datos del pasajero.",
+                    "Pasajero No Valido", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public void eliminar(){
@@ -43,6 +49,15 @@ public class PasajeroPanel extends javax.swing.JPanel implements IPanel {
         this.txtFormattedDNI.setText("");
         this.txtNombre.setText("");
         this.txtNombre.requestFocus();
+    }
+
+    public boolean validateData(){
+        if(this.txtApellido.getText().length() > 0 &&
+                this.txtFormattedDNI.getText().length() > 0 &&
+                this.txtNombre.getText().length() > 0){
+            return true;
+        }
+        return false;
     }
 
     @SuppressWarnings("unchecked")
