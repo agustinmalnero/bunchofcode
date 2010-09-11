@@ -4,7 +4,6 @@
  */
 
 package tsbtp1.util;
-
 /**
  *
  * @author tato
@@ -12,22 +11,26 @@ package tsbtp1.util;
 public class SimpleList<T extends Comparable> {
 
     private Node front;
+    private int size;
 
     public SimpleList(){
         front = null;
+        size = 0;
     }
 
-    public void add(T t){
+    public boolean add(T t){
         Iterator<T> it = iterator();
         Comparable value = null;
         while (it.hasNext()){
             value = it.next();
             if (value.compareTo(t) == 0)
-                return;
+                return false;
         }
         Node p = new Node(t);
         p.next=front;
         front = p;
+        size++;
+        return true;
     }
 
     public boolean remove(T t){
@@ -40,10 +43,16 @@ public class SimpleList<T extends Comparable> {
             }
             if (actual != null){
                 previous.next = actual.next;
+                size--;
                 return true;
             }
         }
         return false;
+    }
+
+    public void clear(){
+        front = null;
+        size = 0;
     }
 
     public Iterator<T> iterator(){
@@ -82,4 +91,40 @@ public class SimpleList<T extends Comparable> {
             return res;
         }
     }
+    
+    public Comparable[] toArray(){
+        Comparable[] array = new Comparable[size];
+        Iterator it = iterator();
+        for (int i = 0; it.hasNext(); i++)
+            array[i] = (T) it.next();
+        return array;
+    }
+    
+    void ordenarQuicksort(Comparable[] array, int first, int last){
+    	int f = first, l = last;
+    	Comparable middle = array[(first + last) / 2];
+    	Comparable aux;
+    	do{
+    		while(array[f].compareTo(middle) < 0) f++;
+    		while(array[l].compareTo(middle) > 0) l--;
+    		if (array[f].compareTo(array[l])<= 0){
+    			aux = array[l];
+    			array[l]=array[f];
+    			array[f]=aux;
+    			f++;
+    			l--;
+    		}
+    	} while (array[f].compareTo(array[l]) <= 0);
+    	if (array[first].compareTo(array[l]) < 0) ordenarQuicksort(array, first, l);
+    	if (array[last].compareTo(array[f]) > 0) ordenarQuicksort(array,f, last);
+    }
+
+    public void ordenar(){
+        Comparable[] array = toArray();
+        ordenarQuicksort(array, 0, size-1);
+        clear();
+        for (int i = size; i < 0; i--)
+            this.add((T)array[i]);
+    }
+
 }
