@@ -31,7 +31,7 @@ import tsbtp1.util.SimpleList;
 public class AgenciaFrame extends javax.swing.JFrame {
 
     private IPanel iPanel;
-    private enum Mode { PASAJERO, PLAN, VIAJE, CIUDAD };
+    private enum Mode { PASAJERO, PLAN, VIAJE, CIUDAD, INGRESOS };
 
     private SimpleList<Ciudad> ciudadList;
     private SimpleList<Pasajero> pasajeroList;
@@ -58,7 +58,6 @@ public class AgenciaFrame extends javax.swing.JFrame {
         btnGuardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
-        btnModificar = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         btnPasajero = new javax.swing.JToggleButton();
         btnPlan = new javax.swing.JToggleButton();
@@ -75,6 +74,7 @@ public class AgenciaFrame extends javax.swing.JFrame {
         panelCargas1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablaConsulta = new javax.swing.JTable();
+        btnIngresos = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -114,12 +114,6 @@ public class AgenciaFrame extends javax.swing.JFrame {
         });
         toolCargas.add(btnCancelar);
         toolCargas.add(jSeparator1);
-
-        btnModificar.setText("Modificar");
-        btnModificar.setFocusable(false);
-        btnModificar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnModificar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        toolCargas.add(btnModificar);
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -242,12 +236,19 @@ public class AgenciaFrame extends javax.swing.JFrame {
         panelCargas1.setLayout(panelCargas1Layout);
         panelCargas1Layout.setHorizontalGroup(
             panelCargas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
         );
         panelCargas1Layout.setVerticalGroup(
             panelCargas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
         );
+
+        btnIngresos.setText("Ingresos");
+        btnIngresos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -256,10 +257,11 @@ public class AgenciaFrame extends javax.swing.JFrame {
             .addComponent(toolConsultas, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnPasajeroConsulta)
-                    .addComponent(btnPlanConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
-                    .addComponent(btnViajeConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
-                    .addComponent(btnCiudadConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE))
+                    .addComponent(btnPlanConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
+                    .addComponent(btnViajeConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
+                    .addComponent(btnCiudadConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
+                    .addComponent(btnPasajeroConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
+                    .addComponent(btnIngresos, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -278,7 +280,9 @@ public class AgenciaFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnViajeConsulta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCiudadConsulta))
+                        .addComponent(btnCiudadConsulta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnIngresos))
                     .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
                     .addComponent(panelCargas1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -302,7 +306,7 @@ public class AgenciaFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPasajeroActionPerformed
-        this.selectedButton(Mode.PASAJERO);
+        this.selectedButtonCargas(Mode.PASAJERO);
         PasajeroPanel pasajero = new PasajeroPanel(this.pasajeroList);
         iPanel = pasajero;
         this.panelCargas.add(pasajero);
@@ -310,7 +314,7 @@ public class AgenciaFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPasajeroActionPerformed
 
     private void btnPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlanActionPerformed
-        this.selectedButton(Mode.PLAN);
+        this.selectedButtonCargas(Mode.PLAN);
         PlanPanel plan = new PlanPanel(this.planList, this.ciudadList);
         iPanel = plan;
         this.panelCargas.add(plan);
@@ -318,7 +322,7 @@ public class AgenciaFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPlanActionPerformed
 
     private void btnViajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViajeActionPerformed
-        this.selectedButton(Mode.VIAJE);
+        this.selectedButtonCargas(Mode.VIAJE);
         ViajePanel viaje = new ViajePanel(this.viajeList, this.planList, this.pasajeroList);
         iPanel = viaje;
         this.panelCargas.add(viaje);
@@ -326,7 +330,7 @@ public class AgenciaFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnViajeActionPerformed
 
     private void btnCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCiudadActionPerformed
-        this.selectedButton(Mode.CIUDAD);
+        this.selectedButtonCargas(Mode.CIUDAD);
         CiudadPanel ciudad = new CiudadPanel(this.ciudadList);
         iPanel = ciudad;
         this.panelCargas.add(ciudad);
@@ -343,22 +347,31 @@ public class AgenciaFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnPasajeroConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPasajeroConsultaActionPerformed
+        this.selectedButtonConsultas(Mode.PASAJERO);
         Funciones.loadTable(jTablaConsulta, pasajeroList);
     }//GEN-LAST:event_btnPasajeroConsultaActionPerformed
 
     private void btnPlanConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlanConsultaActionPerformed
+        this.selectedButtonConsultas(Mode.PLAN);
         Funciones.loadTable(jTablaConsulta, planList);
     }//GEN-LAST:event_btnPlanConsultaActionPerformed
 
     private void btnViajeConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViajeConsultaActionPerformed
+        this.selectedButtonConsultas(Mode.VIAJE);
         Funciones.loadTable(jTablaConsulta, viajeList);
     }//GEN-LAST:event_btnViajeConsultaActionPerformed
 
     private void btnCiudadConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCiudadConsultaActionPerformed
+        this.selectedButtonConsultas(Mode.CIUDAD);
         Funciones.loadTable(jTablaConsulta, ciudadList);
     }//GEN-LAST:event_btnCiudadConsultaActionPerformed
 
-    private void selectedButton(Mode mode){
+    private void btnIngresosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresosActionPerformed
+        this.selectedButtonConsultas(Mode.INGRESOS);
+        Funciones.revenue(jTablaConsulta, viajeList);
+    }//GEN-LAST:event_btnIngresosActionPerformed
+
+    private void selectedButtonCargas(Mode mode){
         this.panelCargas.removeAll();
         this.btnPasajero.setSelected(false);
         this.btnViaje.setSelected(false);
@@ -376,13 +389,33 @@ public class AgenciaFrame extends javax.swing.JFrame {
         }
     }
 
+    private void selectedButtonConsultas(Mode mode){
+        this.btnPasajeroConsulta.setSelected(false);
+        this.btnViajeConsulta.setSelected(false);
+        this.btnPlanConsulta.setSelected(false);
+        this.btnCiudadConsulta.setSelected(false);
+        this.btnIngresos.setSelected(false);
+        switch(mode){
+            case PASAJERO:
+                this.btnPasajeroConsulta.setSelected(true);break;
+            case CIUDAD:
+                this.btnCiudadConsulta.setSelected(true);break;
+            case VIAJE:
+                this.btnViajeConsulta.setSelected(true);break;
+            case PLAN:
+                this.btnPlanConsulta.setSelected(true);break;
+            case INGRESOS:
+                this.btnIngresos.setSelected(true);break;
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JToggleButton btnCiudad;
     private javax.swing.JToggleButton btnCiudadConsulta;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnModificar;
+    private javax.swing.JToggleButton btnIngresos;
     private javax.swing.JToggleButton btnPasajero;
     private javax.swing.JToggleButton btnPasajeroConsulta;
     private javax.swing.JToggleButton btnPlan;

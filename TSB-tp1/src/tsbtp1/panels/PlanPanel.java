@@ -1,5 +1,6 @@
 package tsbtp1.panels;
 
+import javax.swing.JOptionPane;
 import javax.swing.text.MaskFormatter;
 import tsbtp1.model.Ciudad;
 import tsbtp1.model.Plan;
@@ -30,10 +31,15 @@ public class PlanPanel extends javax.swing.JPanel implements IPanel {
     public void guardar(){
         Plan p = new Plan();
         String monto = this.txtFormatCuota.getText().replaceAll(" ", "");
-        p.setCuota(Double.parseDouble(monto));
-        p.setDestino((Ciudad)this.comboDestino.getItemAt(this.comboDestino.getSelectedIndex()));
-        this.list.add(p);
-        this.clear();
+        if(monto.equalsIgnoreCase(".")){
+            JOptionPane.showMessageDialog(this, "Debe ingresar un monto para este plan.",
+                    "Monto No Valido", JOptionPane.ERROR_MESSAGE);
+        }else{
+            p.setCuota(Double.parseDouble(monto));
+            p.setDestino((Ciudad)this.comboDestino.getItemAt(this.comboDestino.getSelectedIndex()));
+            this.list.add(p);
+            this.clear();
+        }
     }
 
     public void eliminar(){
