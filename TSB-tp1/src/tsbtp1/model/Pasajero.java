@@ -2,7 +2,7 @@ package tsbtp1.model;
 
 public class Pasajero implements Comparable<Pasajero>{
 
-    private long dni;
+    private String dni;
     private String apellido;
     private String nombre;
 
@@ -11,7 +11,7 @@ public class Pasajero implements Comparable<Pasajero>{
     }
 
     public void setDni(String dni) {
-        this.dni = Long.parseLong(dni);
+        this.dni = dni;
     }
 
     public void setNombre(String nombre) {
@@ -23,7 +23,7 @@ public class Pasajero implements Comparable<Pasajero>{
     }
 
     public String getDni() {
-        return String.valueOf(dni);
+        return dni;
     }
 
 
@@ -32,7 +32,8 @@ public class Pasajero implements Comparable<Pasajero>{
     }
 
     public int compareTo(Pasajero p){
-        return (int)(this.dni - p.dni);
+        return (int)(Integer.parseInt(this.dni) -
+                Integer.parseInt(p.getDni()));
     }
 
     public String toString(){
