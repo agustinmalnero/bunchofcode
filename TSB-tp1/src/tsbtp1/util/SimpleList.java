@@ -129,4 +129,30 @@ public class SimpleList<T extends Comparable> {
         ordenarQuicksort(array, 0, size - 1);
         return array;
     }
+<<<<<<< local
+
+    public boolean find(Comparable c){
+        Iterator it = iterator();
+        Comparable aux = null;
+        int i = 0;
+        while (it.hasNext() && i<size/2){
+            aux = it.next();
+            i++;
+        }
+        if(c.compareTo(aux)==0)
+            return true;
+        SimpleList<Comparable> l = new SimpleList();
+        if(c.compareTo(aux)<0){
+            while(it.hasNext())
+                l.add(it.next());
+            return l.find(c);
+        }
+        it = iterator();
+        while(it.hasNext() && i<size/2)
+            l.add(it.next());
+        return l.find(c);
+    }
+
+=======
+>>>>>>> other
 }
