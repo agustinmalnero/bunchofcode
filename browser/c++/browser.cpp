@@ -52,7 +52,6 @@ Browser::Browser(QWidget *parent) :
 
 void Browser::openUrl(QString text)
 {
-    //this->setWindowTitle(text);
     this->web->setFocus();
     this->web->load(QUrl(text));
 }
