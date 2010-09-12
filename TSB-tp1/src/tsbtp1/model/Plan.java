@@ -1,9 +1,5 @@
 package tsbtp1.model;
 
-/**
- *
- * @author Diego Sarmentero
- */
 public class Plan implements Comparable<Plan>{
 
     private double cuota;

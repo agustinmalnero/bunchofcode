@@ -1,9 +1,5 @@
 package tsbtp1.model;
 
-/**
- *
- * @author Diego Sarmentero
- */
 public class Viaje implements Comparable<Viaje>{
 
     private Pasajero pasajero;

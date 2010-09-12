@@ -1,14 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * PrincipalJFrame.java
- *
- * Created on 06/09/2010, 10:51:25
- */
-
 package tsbtp1;
 
 import tsbtp1.panels.IPanel;
@@ -25,10 +14,6 @@ import tsbtp1.panels.ViajePanel;
 import tsbtp1.util.Funciones;
 import tsbtp1.util.SimpleList;
 
-/**
- *
- * @author tato
- */
 public class AgenciaFrame extends javax.swing.JFrame {
 
     private IPanel iPanel;
@@ -362,12 +347,15 @@ public class AgenciaFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCiudadActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        this.iPanel.guardar();
+        if(iPanel != null){
+            this.iPanel.guardar();
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.panelCargas.removeAll();
         this.panelCargas.updateUI();
+        this.iPanel = null;
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnPasajeroConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPasajeroConsultaActionPerformed
