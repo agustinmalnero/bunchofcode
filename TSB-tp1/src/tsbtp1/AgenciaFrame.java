@@ -13,6 +13,7 @@ package tsbtp1;
 
 import tsbtp1.panels.IPanel;
 import java.awt.BorderLayout;
+import javax.swing.JOptionPane;
 import tsbtp1.model.Ciudad;
 import tsbtp1.model.Pasajero;
 import tsbtp1.model.Plan;
@@ -65,7 +66,10 @@ public class AgenciaFrame extends javax.swing.JFrame {
         btnCiudad = new javax.swing.JToggleButton();
         jPanel2 = new javax.swing.JPanel();
         toolConsultas = new javax.swing.JToolBar();
+        btnOrdenar = new javax.swing.JButton();
+        jSeparator4 = new javax.swing.JToolBar.Separator();
         btnBuscar = new javax.swing.JButton();
+        txtBuscar = new javax.swing.JTextField();
         btnPasajeroConsulta = new javax.swing.JToggleButton();
         btnPlanConsulta = new javax.swing.JToggleButton();
         btnViajeConsulta = new javax.swing.JToggleButton();
@@ -77,6 +81,7 @@ public class AgenciaFrame extends javax.swing.JFrame {
         btnIngresos = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Agencia de Viajes");
 
         javax.swing.GroupLayout panelCargasLayout = new javax.swing.GroupLayout(panelCargas);
         panelCargas.setLayout(panelCargasLayout);
@@ -186,11 +191,30 @@ public class AgenciaFrame extends javax.swing.JFrame {
         toolConsultas.setFloatable(false);
         toolConsultas.setRollover(true);
 
-        btnBuscar.setText("Buscar");
+        btnOrdenar.setText("Ordernar Tabla");
+        btnOrdenar.setEnabled(false);
+        btnOrdenar.setFocusable(false);
+        btnOrdenar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnOrdenar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnOrdenar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrdenarActionPerformed(evt);
+            }
+        });
+        toolConsultas.add(btnOrdenar);
+        toolConsultas.add(jSeparator4);
+
+        btnBuscar.setText("Buscar por DNI:");
         btnBuscar.setFocusable(false);
         btnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnBuscar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
         toolConsultas.add(btnBuscar);
+        toolConsultas.add(txtBuscar);
 
         btnPasajeroConsulta.setText("Pasajero");
         btnPasajeroConsulta.addActionListener(new java.awt.event.ActionListener() {
@@ -368,8 +392,54 @@ public class AgenciaFrame extends javax.swing.JFrame {
 
     private void btnIngresosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresosActionPerformed
         this.selectedButtonConsultas(Mode.INGRESOS);
+        this.btnOrdenar.setEnabled(false);
         Funciones.revenue(jTablaConsulta, viajeList);
     }//GEN-LAST:event_btnIngresosActionPerformed
+
+    private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarActionPerformed
+        Comparable[] array = null;
+        if(this.btnCiudadConsulta.isSelected()){
+            array = this.ciudadList.ordenar();
+        }else if(this.btnPasajeroConsulta.isSelected()){
+            array = this.pasajeroList.ordenar();
+        }else if(this.btnPlanConsulta.isSelected()){
+            array = this.planList.ordenar();
+        }else if(this.btnViajeConsulta.isSelected()){
+            array = this.viajeList.ordenar();
+        }
+
+        Funciones.loadOrderTable(jTablaConsulta, array);
+        this.btnOrdenar.setEnabled(false);
+    }//GEN-LAST:event_btnOrdenarActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        Comparable[] array = this.pasajeroList.ordenar();
+        Comparable obj = null;
+        if(array.length > 0){
+            obj = Funciones.findPassenger(this.txtBuscar.getText().trim(),
+                    array, 0, array.length-1);
+        }
+
+        if(obj != null){
+            int option = JOptionPane.showConfirmDialog(this, "Desea ver los viajes del Pasajero:\n" +
+                    ((Pasajero)obj).getNombre() + ", " + ((Pasajero)obj).getApellido() +
+                    " - " + ((Pasajero)obj).getDni(),
+                    "Pasajero Encontrado", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+            if(option == JOptionPane.YES_OPTION){
+                Object[] objects = Funciones.filter(this.txtBuscar.getText().trim(),
+                        this.viajeList.toArray());
+                Funciones.loadOrderTable(jTablaConsulta, objects);
+            }
+        }else{
+            JOptionPane.showMessageDialog(this, "No se encontro un pasajero con ese DNI",
+                    "Pasajero No Encontrado", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+        this.selectedButtonConsultas(Mode.INGRESOS);
+        this.btnIngresos.setSelected(false);
+        this.btnOrdenar.setEnabled(false);
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void selectedButtonCargas(Mode mode){
         this.panelCargas.removeAll();
@@ -407,6 +477,8 @@ public class AgenciaFrame extends javax.swing.JFrame {
             case INGRESOS:
                 this.btnIngresos.setSelected(true);break;
         }
+
+        this.btnOrdenar.setEnabled(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -416,6 +488,7 @@ public class AgenciaFrame extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnCiudadConsulta;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JToggleButton btnIngresos;
+    private javax.swing.JButton btnOrdenar;
     private javax.swing.JToggleButton btnPasajero;
     private javax.swing.JToggleButton btnPasajeroConsulta;
     private javax.swing.JToggleButton btnPlan;
@@ -428,12 +501,14 @@ public class AgenciaFrame extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTablaConsulta;
     private javax.swing.JPanel panelCargas;
     private javax.swing.JPanel panelCargas1;
     private javax.swing.JToolBar toolCargas;
     private javax.swing.JToolBar toolConsultas;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 
 }
