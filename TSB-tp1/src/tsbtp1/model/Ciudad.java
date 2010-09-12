@@ -1,9 +1,5 @@
 package tsbtp1.model;
 
-/**
- *
- * @author Diego Sarmentero
- */
 public class Ciudad implements Comparable<Ciudad>{
 
     private String nombre;

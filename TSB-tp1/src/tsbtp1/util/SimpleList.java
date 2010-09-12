@@ -1,13 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tsbtp1.util;
 
-/**
- *
- * @author tato
- */
 public class SimpleList<T extends Comparable> {
 
     private Node front;
