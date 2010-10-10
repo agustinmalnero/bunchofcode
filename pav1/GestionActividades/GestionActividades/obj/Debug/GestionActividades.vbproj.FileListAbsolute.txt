@@ -22,3 +22,27 @@ C:\diego\GestionActividades\GestionActividades\obj\Debug\GestionActividades.Pane
 C:\diego\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelBarrio.resources
 C:\diego\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelCiudad.resources
 C:\diego\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelUsuario.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.exe
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.xml
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.pdb
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.DayView.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.MonthView.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.WeekView.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.Controls.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.VentanaGestion.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.Resources.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelAcciones.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelActividad.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelBarrio.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelCiudad.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelContacto.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelReunion.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.Panel.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelUsuario.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelTareas.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.Views.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.vbproj.GenerateResource.Cache
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\bin\Debug\GestionActividades.exe
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\bin\Debug\GestionActividades.pdb
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\bin\Debug\GestionActividades.xml

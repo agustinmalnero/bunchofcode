@@ -1,11 +1,14 @@
-﻿Public Class Categoria
+﻿Public Class Lugar
     Implements IModel
 
     Dim nombre As String
+    Dim direccion As Direccion
 
-    Public Sub New(ByVal nombre As String)
+    Public Sub New(ByVal nombre As String, ByRef direccion As Direccion)
         Me.nombre = nombre
+        Me.direccion = direccion
     End Sub
+
     Public Function columns() As System.Collections.ArrayList Implements IModel.columns
 
     End Function

@@ -6,6 +6,8 @@ Public Class PanelActividad
     Public Sub New(ByRef fp As System.Windows.Forms.Panel)
         formPanel = fp
         InitializeComponent()
+        dtp_inicio.Value = Now
+        dtp_fin.Value = Now
     End Sub
 
     Private Sub PanelActividad_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -34,5 +36,9 @@ Public Class PanelActividad
     Private Sub bt_mas_categoria_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.cb_categoria.DropDownStyle = ComboBoxStyle.Simple
         Me.cb_categoria.Focus()
+    End Sub
+
+    Private Sub dtp_inicio_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtp_inicio.ValueChanged
+
     End Sub
 End Class

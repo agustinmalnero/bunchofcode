@@ -1,11 +1,12 @@
-﻿Public Class Categoria
+﻿Public Class Mail
     Implements IModel
 
-    Dim nombre As String
+    Dim direccion As String
 
-    Public Sub New(ByVal nombre As String)
-        Me.nombre = nombre
+    Public Sub New(ByVal direccion As String)
+        Me.direccion = direccion
     End Sub
+
     Public Function columns() As System.Collections.ArrayList Implements IModel.columns
 
     End Function
@@ -23,6 +24,6 @@
     End Function
 
     Public Function tableName() As String Implements IModel.tableName
-
+        Return "Mail"
     End Function
 End Class
