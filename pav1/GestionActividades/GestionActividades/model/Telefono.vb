@@ -1,10 +1,10 @@
-﻿Public Class Categoria
+﻿Public Class Telefono
     Implements IModel
 
-    Dim nombre As String
+    Dim numero As String
 
-    Public Sub New(ByVal nombre As String)
-        Me.nombre = nombre
+    Public Sub New(ByVal numero As String)
+        Me.numero = numero
     End Sub
     Public Function columns() As System.Collections.ArrayList Implements IModel.columns
 
@@ -23,6 +23,6 @@
     End Function
 
     Public Function tableName() As String Implements IModel.tableName
-
+        Return "telefono"
     End Function
 End Class

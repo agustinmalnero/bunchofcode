@@ -1,6 +1,14 @@
 ﻿Public Class Usuario
     Implements IModel
 
+    Dim nombre As String
+    Dim clave As String
+
+    Public Sub New(ByVal nommbre As String, ByVal clave As String)
+        Me.nombre = nommbre
+        Me.clave = clave
+    End Sub
+
     Public Function columns() As ArrayList Implements IModel.columns
 
     End Function

@@ -1,11 +1,19 @@
-﻿Public Class Categoria
+﻿Public Class Direccion
     Implements IModel
 
-    Dim nombre As String
+    Dim calle As String
+    Dim numero As Integer
+    Dim barrio As String
+    Dim ciudad As String
 
-    Public Sub New(ByVal nombre As String)
-        Me.nombre = nombre
+    Public Sub New(ByVal calle As String, ByVal numero As Integer, _
+                   ByVal barrio As String, ByVal ciudad As String)
+        Me.calle = calle
+        Me.numero = numero
+        Me.barrio = barrio
+        Me.ciudad = ciudad
     End Sub
+
     Public Function columns() As System.Collections.ArrayList Implements IModel.columns
 
     End Function
@@ -23,6 +31,6 @@
     End Function
 
     Public Function tableName() As String Implements IModel.tableName
-
+        Return "Direccion"
     End Function
 End Class

@@ -105,9 +105,13 @@
     <Compile Include="model\Categoria.vb" />
     <Compile Include="model\Ciudad.vb" />
     <Compile Include="model\Contacto.vb" />
+    <Compile Include="model\Direccion.vb" />
     <Compile Include="model\IModel.vb" />
+    <Compile Include="model\Lugar.vb" />
+    <Compile Include="model\Mail.vb" />
     <Compile Include="model\Reunion.vb" />
     <Compile Include="model\Tarea.vb" />
+    <Compile Include="model\Telefono.vb" />
     <Compile Include="model\Usuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -131,6 +135,12 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="DataAccess.vb" />
+    <Compile Include="paneles\PanelCategoria.Designer.vb">
+      <DependentUpon>PanelCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="paneles\PanelCategoria.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="paneles\IPaneles.vb" />
     <Compile Include="paneles\PanelActividad.Designer.vb">
       <DependentUpon>PanelActividad.vb</DependentUpon>
@@ -211,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PanelAcciones.resx">
       <DependentUpon>PanelAcciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paneles\PanelCategoria.resx">
+      <DependentUpon>PanelCategoria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="paneles\PanelActividad.resx">
       <DependentUpon>PanelActividad.vb</DependentUpon>

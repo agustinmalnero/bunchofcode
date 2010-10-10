@@ -1,6 +1,12 @@
 ﻿Public Class Ciudad
     Implements IModel
 
+    Dim nombre As String
+
+    Public Sub New(ByVal nombre As String)
+        Me.nombre = nombre
+    End Sub
+
     Public Function columns() As ArrayList Implements IModel.columns
 
     End Function
