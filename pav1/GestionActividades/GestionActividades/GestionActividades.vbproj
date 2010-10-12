@@ -112,6 +112,7 @@
     <Compile Include="model\Reunion.vb" />
     <Compile Include="model\Tarea.vb" />
     <Compile Include="model\Telefono.vb" />
+    <Compile Include="model\TipoContacto.vb" />
     <Compile Include="model\Usuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -176,7 +177,6 @@
       <DependentUpon>PanelTarea.vb</DependentUpon>
     </Compile>
     <Compile Include="paneles\PanelTarea.vb">
-      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="paneles\PanelUsuario.designer.vb">
       <DependentUpon>PanelUsuario.vb</DependentUpon>
