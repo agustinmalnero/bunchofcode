@@ -19,19 +19,39 @@ Partial Class PanelCiudad
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView
+        Me.tableCiudad = New System.Windows.Forms.DataGridView
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.txt_nombre = New System.Windows.Forms.TextBox
         Me.lbl_nombre = New System.Windows.Forms.Label
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tableCiudad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'tableCiudad
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(42, 121)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(498, 168)
-        Me.DataGridView1.TabIndex = 60
+        Me.tableCiudad.AllowUserToAddRows = False
+        Me.tableCiudad.AllowUserToDeleteRows = False
+        Me.tableCiudad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.tableCiudad.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nombre})
+        Me.tableCiudad.Location = New System.Drawing.Point(42, 121)
+        Me.tableCiudad.Name = "tableCiudad"
+        Me.tableCiudad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.tableCiudad.Size = New System.Drawing.Size(498, 168)
+        Me.tableCiudad.TabIndex = 60
+        '
+        'ID
+        '
+        Me.ID.Frozen = True
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        '
+        'Nombre
+        '
+        Me.Nombre.Frozen = True
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
         '
         'txt_nombre
         '
@@ -49,22 +69,24 @@ Partial Class PanelCiudad
         Me.lbl_nombre.TabIndex = 58
         Me.lbl_nombre.Text = "Nombre:"
         '
-        'PanelBarrio
+        'PanelCiudad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.tableCiudad)
         Me.Controls.Add(Me.txt_nombre)
         Me.Controls.Add(Me.lbl_nombre)
-        Me.Name = "PanelBarrio"
+        Me.Name = "PanelCiudad"
         Me.Size = New System.Drawing.Size(586, 496)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tableCiudad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents tableCiudad As System.Windows.Forms.DataGridView
     Friend WithEvents txt_nombre As System.Windows.Forms.TextBox
     Friend WithEvents lbl_nombre As System.Windows.Forms.Label
+    Friend WithEvents ID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

@@ -13,16 +13,14 @@
 
     Public Function columns() As ArrayList Implements IModel.columns
         Dim res As New ArrayList
-        res.Add("id")
         res.Add("nombre")
-        res.Add("ciudad")
+        res.Add("fk_ciudad")
         Return res
     End Function
 
     Public Function data() As ArrayList Implements IModel.data
         Dim res As New ArrayList
-        res.Add(id)
-        res.Add(nombre)
+        res.Add("'" & nombre & "'")
         res.Add(ciudad.getId)
         Return res
     End Function

@@ -18,9 +18,10 @@ Public Class DataAccess
         End Try
     End Sub
 
-    Public Sub insertar(ByVal model As IModel)
+    Public Function insertar(ByVal model As IModel)
         Dim cmd As New SqlCommand()
         Try
+            con.Open()
             cmd.Connection = con
             Dim columns = ""
             Dim values = ""
@@ -30,7 +31,7 @@ Public Class DataAccess
                     values = item
                     first = False
                 Else
-                    values = "," & item
+                    values &= "," & item
                 End If
             Next
             first = True
@@ -39,49 +40,60 @@ Public Class DataAccess
                     columns = item
                     first = False
                 Else
-                    columns = "," & item
+                    columns &= "," & item
                 End If
             Next
             Dim query = "INSERT INTO " & model.tableName() & "(" _
                     & columns & ") " & "VALUES(" + values & ")"
             cmd.CommandText = query
-            cmd.ExecuteNonQuery()
+            Return cmd.ExecuteNonQuery()
         Catch ex As Exception
 
+        Finally
+            con.Close()
         End Try
-    End Sub
+
+        Return 0
+    End Function
 
     Public Sub eliminar(ByVal model As IModel)
         Dim cmd As New SqlCommand()
         Try
+            con.Open()
             cmd.Connection = con
             Dim query = "DELETE FROM " & model.tableName() & " WHERE id=" & model.getId()
             cmd.CommandText = query
             cmd.ExecuteNonQuery()
         Catch ex As Exception
-
+        Finally
+            con.Close()
         End Try
     End Sub
 
     Public Sub modificar(ByVal model As IModel)
         Dim cmd As New SqlCommand()
         Try
+            con.Open()
             cmd.Connection = con
             Dim values = ""
             Dim first = True
-            Dim length = model.columns().Count
-            Dim cols = model.columns()
             Dim data = model.data()
-            For i As Integer = 0 To length
+            Dim i = 0
+            For Each item As String In model.columns()
                 If first Then
-                    values = cols.Item(i) & "=" & data.Item(i)
+                    values = item & "=" & data.Item(i)
+                    first = False
+                Else
+                    values &= "," & item & "=" & data.Item(i)
                 End If
+                i += 1
             Next
             Dim query = "UPDATE " & model.tableName() & " SET " & values & " WHERE id=" & model.getId()
             cmd.CommandText = query
             cmd.ExecuteNonQuery()
         Catch ex As Exception
-
+        Finally
+            con.Close()
         End Try
     End Sub
 
@@ -89,11 +101,13 @@ Public Class DataAccess
         Dim cmd As New SqlCommand()
         Dim tabla As New Data.DataTable
         Try
+            con.Open()
             cmd.Connection = con
             cmd.CommandText = query
             tabla.Load(cmd.ExecuteReader())
         Catch ex As Exception
-
+        Finally
+            con.Close()
         End Try
 
         Return tabla
