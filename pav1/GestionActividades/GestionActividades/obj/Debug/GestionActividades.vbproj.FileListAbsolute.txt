@@ -46,3 +46,29 @@ C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActi
 C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\bin\Debug\GestionActividades.exe
 C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\bin\Debug\GestionActividades.pdb
 C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\bin\Debug\GestionActividades.xml
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.exe
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.xml
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.pdb
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\ResolveAssemblyReference.cache
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.DayView.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.MonthView.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.WeekView.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.Controls.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.VentanaGestion.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.Resources.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelAcciones.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelCategoria.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelActividad.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelBarrio.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelCiudad.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelContacto.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelReunion.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelUsuario.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelTareas.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.Views.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.vbproj.GenerateResource.Cache
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\bin\Debug\GestionActividades.exe
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\bin\Debug\GestionActividades.pdb
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\bin\Debug\GestionActividades.xml
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.Sesion.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelTipoContacto.resources

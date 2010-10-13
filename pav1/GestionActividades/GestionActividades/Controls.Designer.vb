@@ -24,7 +24,7 @@ Partial Class Controls
     Private Sub InitializeComponent()
         Me.btnNuevo = New System.Windows.Forms.Button
         Me.btnGuardar = New System.Windows.Forms.Button
-        Me.btnBuscar = New System.Windows.Forms.Button
+        Me.btnModificar = New System.Windows.Forms.Button
         Me.btnEliminar = New System.Windows.Forms.Button
         Me.SuspendLayout()
         '
@@ -46,14 +46,14 @@ Partial Class Controls
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
-        'btnBuscar
+        'btnModificar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(3, 65)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(171, 25)
-        Me.btnBuscar.TabIndex = 2
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = True
+        Me.btnModificar.Location = New System.Drawing.Point(3, 65)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(171, 25)
+        Me.btnModificar.TabIndex = 2
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
         '
         'btnEliminar
         '
@@ -69,7 +69,7 @@ Partial Class Controls
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.btnEliminar)
-        Me.Controls.Add(Me.btnBuscar)
+        Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnNuevo)
         Me.Name = "Controls"
@@ -79,7 +79,7 @@ Partial Class Controls
     End Sub
     Friend WithEvents btnNuevo As System.Windows.Forms.Button
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
-    Friend WithEvents btnBuscar As System.Windows.Forms.Button
+    Friend WithEvents btnModificar As System.Windows.Forms.Button
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
 
 End Class

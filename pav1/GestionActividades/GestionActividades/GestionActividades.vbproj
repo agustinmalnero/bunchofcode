@@ -17,6 +17,21 @@
     <OptionCompare>Binary</OptionCompare>
     <OptionStrict>Off</OptionStrict>
     <OptionInfer>On</OptionInfer>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -177,6 +192,13 @@
       <DependentUpon>PanelTarea.vb</DependentUpon>
     </Compile>
     <Compile Include="paneles\PanelTarea.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="paneles\PanelTipoContacto.Designer.vb">
+      <DependentUpon>PanelTipoContacto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="paneles\PanelTipoContacto.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="paneles\PanelUsuario.designer.vb">
       <DependentUpon>PanelUsuario.vb</DependentUpon>
@@ -188,6 +210,12 @@
       <DependentUpon>PanelTareas.vb</DependentUpon>
     </Compile>
     <Compile Include="PanelTareas.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sesion.Designer.vb">
+      <DependentUpon>Sesion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sesion.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views.Designer.vb">
@@ -240,14 +268,17 @@
     <EmbeddedResource Include="paneles\PanelReunion.resx">
       <DependentUpon>PanelReunion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="paneles\PanelTarea.resx">
-      <DependentUpon>PanelTarea.vb</DependentUpon>
+    <EmbeddedResource Include="paneles\PanelTipoContacto.resx">
+      <DependentUpon>PanelTipoContacto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="paneles\PanelUsuario.resx">
       <DependentUpon>PanelUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PanelTareas.resx">
       <DependentUpon>PanelTareas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sesion.resx">
+      <DependentUpon>Sesion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views.resx">
       <DependentUpon>Views.vb</DependentUpon>
@@ -263,6 +294,38 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="iconos\" />

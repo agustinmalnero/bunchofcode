@@ -10,15 +10,13 @@
     End Sub
     Public Function columns() As System.Collections.ArrayList Implements IModel.columns
         Dim res As New ArrayList
-        res.Add("id")
         res.Add("nombre")
         Return res
     End Function
 
     Public Function data() As System.Collections.ArrayList Implements IModel.data
         Dim res As New ArrayList
-        res.Add(id)
-        res.Add(nombre)
+        res.Add("'" & nombre & "'")
         Return res
     End Function
 
@@ -31,6 +29,6 @@
     End Function
 
     Public Function tableName() As String Implements IModel.tableName
-
+        Return "categoria"
     End Function
 End Class

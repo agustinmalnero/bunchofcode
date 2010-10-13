@@ -9,7 +9,7 @@
         Me.formPanel = panel
     End Sub
 
-    Public Sub buscar() Implements IButtons.buscar
+    Public Sub modificar() Implements IButtons.modificar
 
     End Sub
 

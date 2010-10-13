@@ -20,12 +20,16 @@ Partial Class PanelBarrio
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView
+        Me.tableBarrio = New System.Windows.Forms.DataGridView
         Me.txt_nombre = New System.Windows.Forms.TextBox
         Me.lbl_nombre = New System.Windows.Forms.Label
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox
+        Me.cboCiudad = New System.Windows.Forms.ComboBox
         Me.bt_mas_ciudad = New System.Windows.Forms.Button
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Barrio = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.id_ciudad = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Ciudad = New System.Windows.Forms.DataGridViewTextBoxColumn
+        CType(Me.tableBarrio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -37,13 +41,17 @@ Partial Class PanelBarrio
         Me.Label1.TabIndex = 69
         Me.Label1.Text = "Ciudad:"
         '
-        'DataGridView1
+        'tableBarrio
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(42, 121)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(498, 168)
-        Me.DataGridView1.TabIndex = 70
+        Me.tableBarrio.AllowUserToAddRows = False
+        Me.tableBarrio.AllowUserToDeleteRows = False
+        Me.tableBarrio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.tableBarrio.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Barrio, Me.id_ciudad, Me.Ciudad})
+        Me.tableBarrio.Location = New System.Drawing.Point(42, 121)
+        Me.tableBarrio.Name = "tableBarrio"
+        Me.tableBarrio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.tableBarrio.Size = New System.Drawing.Size(498, 168)
+        Me.tableBarrio.TabIndex = 70
         '
         'txt_nombre
         '
@@ -61,14 +69,14 @@ Partial Class PanelBarrio
         Me.lbl_nombre.TabIndex = 66
         Me.lbl_nombre.Text = "Nombre:"
         '
-        'ComboBox1
+        'cboCiudad
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(133, 68)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(347, 21)
-        Me.ComboBox1.TabIndex = 68
+        Me.cboCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboCiudad.FormattingEnabled = True
+        Me.cboCiudad.Location = New System.Drawing.Point(133, 68)
+        Me.cboCiudad.Name = "cboCiudad"
+        Me.cboCiudad.Size = New System.Drawing.Size(347, 21)
+        Me.cboCiudad.TabIndex = 68
         '
         'bt_mas_ciudad
         '
@@ -79,28 +87,61 @@ Partial Class PanelBarrio
         Me.bt_mas_ciudad.Text = "+"
         Me.bt_mas_ciudad.UseVisualStyleBackColor = True
         '
+        'ID
+        '
+        Me.ID.Frozen = True
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        '
+        'Barrio
+        '
+        Me.Barrio.Frozen = True
+        Me.Barrio.HeaderText = "Barrio"
+        Me.Barrio.Name = "Barrio"
+        Me.Barrio.ReadOnly = True
+        '
+        'id_ciudad
+        '
+        Me.id_ciudad.Frozen = True
+        Me.id_ciudad.HeaderText = "id_ciudad"
+        Me.id_ciudad.Name = "id_ciudad"
+        Me.id_ciudad.ReadOnly = True
+        Me.id_ciudad.Visible = False
+        '
+        'Ciudad
+        '
+        Me.Ciudad.Frozen = True
+        Me.Ciudad.HeaderText = "Ciudad"
+        Me.Ciudad.Name = "Ciudad"
+        Me.Ciudad.ReadOnly = True
+        '
         'PanelBarrio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.bt_mas_ciudad)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cboCiudad)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.tableBarrio)
         Me.Controls.Add(Me.txt_nombre)
         Me.Controls.Add(Me.lbl_nombre)
         Me.Name = "PanelBarrio"
         Me.Size = New System.Drawing.Size(586, 496)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tableBarrio, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents tableBarrio As System.Windows.Forms.DataGridView
     Friend WithEvents txt_nombre As System.Windows.Forms.TextBox
     Friend WithEvents lbl_nombre As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboCiudad As System.Windows.Forms.ComboBox
     Friend WithEvents bt_mas_ciudad As System.Windows.Forms.Button
+    Friend WithEvents ID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Barrio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents id_ciudad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Ciudad As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

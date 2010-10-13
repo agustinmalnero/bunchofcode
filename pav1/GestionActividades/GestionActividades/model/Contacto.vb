@@ -4,38 +4,47 @@
     Dim id As String
     Dim nombre As String
     Dim apellido As String
-    Dim telefonos As List(Of Telefono)
-    Dim mails As List(Of Mail)
+    Dim calle As String
+    Dim numero As Integer
+    Dim barrio As Barrio
+    Dim ciudad As Ciudad
     Dim tipoContacto As TipoContacto
-    Dim direccion As Direccion
+    'Dim direccion As Direccion
 
     Public Sub New(ByVal id As Integer, ByVal nombre As String, ByVal apellido As String, _
-                   ByRef telefonos As List(Of Telefono), ByRef mails As List(Of Mail), _
-                   ByVal tipoContacto As TipoContacto, ByRef direccion As Direccion)
+                   ByVal calle As String, ByVal numero As Integer, ByVal barrio As Barrio, _
+                   ByVal ciudad As Ciudad, ByVal tipo As TipoContacto)
         Me.id = id
         Me.nombre = nombre
         Me.apellido = apellido
-        Me.telefonos = telefonos
-        Me.mails = mails
-        Me.tipoContacto = tipoContacto
-        Me.direccion = direccion
+        Me.calle = calle
+        Me.numero = numero
+        Me.barrio = barrio
+        Me.ciudad = ciudad
+        Me.tipoContacto = tipo
     End Sub
 
     Public Function columns() As ArrayList Implements IModel.columns
         Dim res As New ArrayList
-        res.Add("id")
         res.Add("nombre")
         res.Add("apellido")
-        res.Add("tipoContacto")
+        res.Add("calle")
+        res.Add("numero")
+        res.Add("fk_barrio")
+        res.Add("fk_ciudad")
+        res.Add("fk_tipocontacto")
         Return res
     End Function
 
     Public Function data() As ArrayList Implements IModel.data
         Dim res As New ArrayList
-        res.Add(id)
-        res.Add(nombre)
-        res.Add(apellido)
-        res.Add(tipoContacto)
+        res.Add("'" & nombre & "'")
+        res.Add("'" & apellido & "'")
+        res.Add("'" & calle & "'")
+        res.Add(numero)
+        res.Add(barrio.getId())
+        res.Add(ciudad.getId())
+        res.Add(tipoContacto.getId())
         Return res
     End Function
 

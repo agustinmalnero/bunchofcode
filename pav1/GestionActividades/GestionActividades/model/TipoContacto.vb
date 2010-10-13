@@ -1,4 +1,4 @@
-﻿Public Class Ciudad
+﻿Public Class TipoContacto
     Implements IModel
 
     Dim id As Integer
@@ -8,21 +8,16 @@
         Me.id = id
         Me.nombre = nombre
     End Sub
-
-    Public Function columns() As ArrayList Implements IModel.columns
+    Public Function columns() As System.Collections.ArrayList Implements IModel.columns
         Dim res As New ArrayList
-        res.Add("nombre")
+        res.Add("tipo")
         Return res
     End Function
 
-    Public Function data() As ArrayList Implements IModel.data
+    Public Function data() As System.Collections.ArrayList Implements IModel.data
         Dim res As New ArrayList
         res.Add("'" & nombre & "'")
         Return res
-    End Function
-
-    Public Function tableName() As String Implements IModel.tableName
-        Return "ciudad"
     End Function
 
     Public Function getId() As String Implements IModel.getId
@@ -33,4 +28,7 @@
 
     End Function
 
+    Public Function tableName() As String Implements IModel.tableName
+        Return "tipo_contacto"
+    End Function
 End Class

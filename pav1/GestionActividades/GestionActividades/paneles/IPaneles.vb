@@ -1,9 +1,10 @@
 Public Interface IPaneles
 
     Sub nuevo()
-    Sub buscar()
-    Function eliminar() As IModel
-    Function modificar() As IModel
-    Function guardar() As IModel
+    Sub loadTable(ByRef data As Data.DataTable)
+    Function buscar() As String
+    Sub eliminar()
+    Sub modificar()
+    Sub guardar()
 
 End Interface

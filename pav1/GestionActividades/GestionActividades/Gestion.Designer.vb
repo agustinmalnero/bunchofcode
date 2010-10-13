@@ -24,8 +24,8 @@ Partial Class VentanaGestion
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VentanaGestion))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
+        Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel
+        Me.toolbar = New System.Windows.Forms.ToolStrip
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton
         Me.IniciarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.CerrarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -45,35 +45,36 @@ Partial Class VentanaGestion
         Me.panelDerecha = New System.Windows.Forms.Panel
         Me.centralPanel = New System.Windows.Forms.Panel
         Me.buttonsPanel = New System.Windows.Forms.Panel
+        Me.AdministrarTipoContactoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.StatusStrip1.SuspendLayout()
-        Me.ToolStrip1.SuspendLayout()
+        Me.toolbar.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblUsuario})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 534)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(965, 22)
         Me.StatusStrip1.TabIndex = 0
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'ToolStripStatusLabel1
+        'lblUsuario
         '
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(47, 17)
-        Me.ToolStripStatusLabel1.Text = "Usuario:"
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.Size = New System.Drawing.Size(47, 17)
+        Me.lblUsuario.Text = "Usuario:"
         '
-        'ToolStrip1
+        'toolbar
         '
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(24, 32)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton1, Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton3, Me.btnPreferencias, Me.ToolStripSeparator1, Me.btnCancel})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.MinimumSize = New System.Drawing.Size(0, 30)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(965, 30)
-        Me.ToolStrip1.TabIndex = 1
-        Me.ToolStrip1.Text = "ToolStrip1"
+        Me.toolbar.ImageScalingSize = New System.Drawing.Size(24, 32)
+        Me.toolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton1, Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton3, Me.btnPreferencias, Me.ToolStripSeparator1, Me.btnCancel})
+        Me.toolbar.Location = New System.Drawing.Point(0, 0)
+        Me.toolbar.MinimumSize = New System.Drawing.Size(0, 30)
+        Me.toolbar.Name = "toolbar"
+        Me.toolbar.Size = New System.Drawing.Size(965, 30)
+        Me.toolbar.TabIndex = 1
+        Me.toolbar.Text = "ToolStrip1"
         '
         'ToolStripDropDownButton1
         '
@@ -130,7 +131,7 @@ Partial Class VentanaGestion
         'btnPreferencias
         '
         Me.btnPreferencias.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnPreferencias.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuUsuario, Me.menuCiudades, Me.menuBarrios, Me.menuCategorias})
+        Me.btnPreferencias.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuUsuario, Me.menuCiudades, Me.menuBarrios, Me.menuCategorias, Me.AdministrarTipoContactoToolStripMenuItem})
         Me.btnPreferencias.Image = CType(resources.GetObject("btnPreferencias.Image"), System.Drawing.Image)
         Me.btnPreferencias.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnPreferencias.Name = "btnPreferencias"
@@ -140,25 +141,25 @@ Partial Class VentanaGestion
         'menuUsuario
         '
         Me.menuUsuario.Name = "menuUsuario"
-        Me.menuUsuario.Size = New System.Drawing.Size(194, 22)
+        Me.menuUsuario.Size = New System.Drawing.Size(209, 22)
         Me.menuUsuario.Text = "Administrar Usuarios"
         '
         'menuCiudades
         '
         Me.menuCiudades.Name = "menuCiudades"
-        Me.menuCiudades.Size = New System.Drawing.Size(194, 22)
+        Me.menuCiudades.Size = New System.Drawing.Size(209, 22)
         Me.menuCiudades.Text = "Administrar Ciudades"
         '
         'menuBarrios
         '
         Me.menuBarrios.Name = "menuBarrios"
-        Me.menuBarrios.Size = New System.Drawing.Size(194, 22)
+        Me.menuBarrios.Size = New System.Drawing.Size(209, 22)
         Me.menuBarrios.Text = "Administrar Barrios"
         '
         'menuCategorias
         '
         Me.menuCategorias.Name = "menuCategorias"
-        Me.menuCategorias.Size = New System.Drawing.Size(194, 22)
+        Me.menuCategorias.Size = New System.Drawing.Size(209, 22)
         Me.menuCategorias.Text = "Administrar Categorias"
         '
         'ToolStripSeparator1
@@ -221,6 +222,12 @@ Partial Class VentanaGestion
         Me.buttonsPanel.Size = New System.Drawing.Size(177, 126)
         Me.buttonsPanel.TabIndex = 6
         '
+        'AdministrarTipoContactoToolStripMenuItem
+        '
+        Me.AdministrarTipoContactoToolStripMenuItem.Name = "AdministrarTipoContactoToolStripMenuItem"
+        Me.AdministrarTipoContactoToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
+        Me.AdministrarTipoContactoToolStripMenuItem.Text = "Administrar Tipo Contacto"
+        '
         'VentanaGestion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -230,7 +237,7 @@ Partial Class VentanaGestion
         Me.Controls.Add(Me.centralPanel)
         Me.Controls.Add(Me.panelDerecha)
         Me.Controls.Add(Me.panelIzquierda)
-        Me.Controls.Add(Me.ToolStrip1)
+        Me.Controls.Add(Me.toolbar)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.ShapeContainer1)
         Me.MaximizeBox = False
@@ -239,14 +246,14 @@ Partial Class VentanaGestion
         Me.Text = "Sistema de Gestion de Actividades"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
+        Me.toolbar.ResumeLayout(False)
+        Me.toolbar.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
-    Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
+    Friend WithEvents toolbar As System.Windows.Forms.ToolStrip
     Friend WithEvents panelIzquierda As System.Windows.Forms.Panel
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents LineShape1 As Microsoft.VisualBasic.PowerPacks.LineShape
@@ -256,7 +263,7 @@ Partial Class VentanaGestion
     Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents lblUsuario As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents panelDerecha As System.Windows.Forms.Panel
     Friend WithEvents centralPanel As System.Windows.Forms.Panel
     Friend WithEvents buttonsPanel As System.Windows.Forms.Panel
@@ -267,5 +274,6 @@ Partial Class VentanaGestion
     Friend WithEvents menuCategorias As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents btnCancel As System.Windows.Forms.ToolStripButton
+    Friend WithEvents AdministrarTipoContactoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

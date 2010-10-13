@@ -2,7 +2,7 @@
     Sub nuevo()
     Sub guardar()
     Sub eliminar()
-    Sub buscar()
+    Sub modificar()
     Sub mes()
     Sub dia()
     Sub semana()
