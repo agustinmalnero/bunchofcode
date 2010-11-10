@@ -26,7 +26,7 @@ Partial Class PanelAcciones
         Me.btnReunion = New System.Windows.Forms.Button
         Me.btnPlanificar = New System.Windows.Forms.Button
         Me.btnContactos = New System.Windows.Forms.Button
-        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar
+        Me.calendar = New System.Windows.Forms.MonthCalendar
         Me.SuspendLayout()
         '
         'btnActividad
@@ -65,17 +65,17 @@ Partial Class PanelAcciones
         Me.btnContactos.Text = "Contactos"
         Me.btnContactos.UseVisualStyleBackColor = True
         '
-        'MonthCalendar1
+        'calendar
         '
-        Me.MonthCalendar1.Location = New System.Drawing.Point(0, 202)
-        Me.MonthCalendar1.Name = "MonthCalendar1"
-        Me.MonthCalendar1.TabIndex = 4
+        Me.calendar.Location = New System.Drawing.Point(0, 202)
+        Me.calendar.Name = "calendar"
+        Me.calendar.TabIndex = 4
         '
         'PanelAcciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.MonthCalendar1)
+        Me.Controls.Add(Me.calendar)
         Me.Controls.Add(Me.btnContactos)
         Me.Controls.Add(Me.btnPlanificar)
         Me.Controls.Add(Me.btnReunion)
@@ -89,6 +89,6 @@ Partial Class PanelAcciones
     Friend WithEvents btnReunion As System.Windows.Forms.Button
     Friend WithEvents btnPlanificar As System.Windows.Forms.Button
     Friend WithEvents btnContactos As System.Windows.Forms.Button
-    Friend WithEvents MonthCalendar1 As System.Windows.Forms.MonthCalendar
+    Friend WithEvents calendar As System.Windows.Forms.MonthCalendar
 
 End Class

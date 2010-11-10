@@ -72,3 +72,4 @@ C:\diego\bunch\pav1\GestionActividades\GestionActividades\bin\Debug\GestionActiv
 C:\diego\bunch\pav1\GestionActividades\GestionActividades\bin\Debug\GestionActividades.xml
 C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.Sesion.resources
 C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelTipoContacto.resources
+C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelTarea.resources

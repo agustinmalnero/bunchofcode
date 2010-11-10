@@ -17,14 +17,18 @@ Public Class PanelCiudad
     Public Sub guardar() Implements IPaneles.guardar
         Dim ciudad = New Ciudad(0, Me.txt_nombre.Text)
         _access.insertar(ciudad)
-        Me.txt_nombre.Text = ""
+        Me.reload()
+    End Sub
+
+    Private Sub reload()
+        Me.nuevo()
 
         Dim data = _access.buscar("SELECT * FROM ciudad")
         Dim c As Integer
         Me.tableCiudad.Rows.Clear()
 
         For c = 0 To data.Rows.Count() - 1
-            Me.tableCiudad.Rows.Add(data.Rows(c)("id"), data.Rows(c)("nombre"))
+            Me.tableCiudad.Rows.Add(data.Rows(c)("id"), data.Rows(c)("nombre").ToString().Trim())
         Next
     End Sub
 
@@ -38,7 +42,7 @@ Public Class PanelCiudad
         Me.tableCiudad.Rows.Clear()
 
         For c = 0 To data.Rows.Count() - 1
-            Me.tableCiudad.Rows.Add(data.Rows(c)("id"), data.Rows(c)("nombre"))
+            Me.tableCiudad.Rows.Add(data.Rows(c)("id"), data.Rows(c)("nombre").ToString().Trim())
         Next
     End Sub
 
@@ -46,14 +50,14 @@ Public Class PanelCiudad
         Dim index = Integer.Parse(Me.tableCiudad.SelectedCells.Item(0).Value)
         Dim ciudad = New Ciudad(index, Me.txt_nombre.Text)
         _access.eliminar(ciudad)
-        Me.txt_nombre.Text = ""
+        Me.reload()
     End Sub
 
     Public Sub modificar() Implements IPaneles.modificar
         Dim index = Integer.Parse(Me.tableCiudad.SelectedCells.Item(0).Value)
         Dim ciudad = New Ciudad(index, Me.txt_nombre.Text)
         _access.modificar(ciudad)
-        Me.txt_nombre.Text = ""
+        Me.reload()
     End Sub
 
     Private Sub tableCiudad_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles tableCiudad.CellContentClick

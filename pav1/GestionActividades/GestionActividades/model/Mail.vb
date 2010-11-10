@@ -3,23 +3,25 @@
 
     Dim id As Integer
     Dim direccion As String
+    Dim contacto As Integer
 
-    Public Sub New(ByVal id As Integer, ByVal direccion As String)
+    Public Sub New(ByVal id As Integer, ByVal direccion As String, ByVal contacto As Integer)
         Me.id = id
         Me.direccion = direccion
+        Me.contacto = contacto
     End Sub
 
     Public Function columns() As System.Collections.ArrayList Implements IModel.columns
         Dim res As New ArrayList
-        res.Add("id")
-        res.Add("direccion")
+        res.Add("mail")
+        res.Add("contacto")
         Return res
     End Function
 
     Public Function data() As System.Collections.ArrayList Implements IModel.data
         Dim res As New ArrayList
-        res.Add(id)
-        res.Add(direccion)
+        res.Add("'" & direccion & "'")
+        res.Add(contacto)
         Return res
     End Function
 
@@ -32,6 +34,6 @@
     End Function
 
     Public Function tableName() As String Implements IModel.tableName
-        Return "Mail"
+        Return "email"
     End Function
 End Class

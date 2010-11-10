@@ -20,12 +20,14 @@ Partial Class PanelUsuario
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.tableUsuario = New System.Windows.Forms.DataGridView
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Username = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.txt_nombre = New System.Windows.Forms.TextBox
         Me.lbl_nombre = New System.Windows.Forms.Label
         Me.txt_clave = New System.Windows.Forms.TextBox
         Me.Label1 = New System.Windows.Forms.Label
+        Me.Label2 = New System.Windows.Forms.Label
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Username = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Password = New System.Windows.Forms.DataGridViewTextBoxColumn
         CType(Me.tableUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -34,27 +36,12 @@ Partial Class PanelUsuario
         Me.tableUsuario.AllowUserToAddRows = False
         Me.tableUsuario.AllowUserToDeleteRows = False
         Me.tableUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.tableUsuario.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.Username})
+        Me.tableUsuario.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.Username, Me.Password})
         Me.tableUsuario.Location = New System.Drawing.Point(42, 121)
         Me.tableUsuario.Name = "tableUsuario"
         Me.tableUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.tableUsuario.Size = New System.Drawing.Size(498, 168)
         Me.tableUsuario.TabIndex = 63
-        '
-        'id
-        '
-        Me.id.Frozen = True
-        Me.id.HeaderText = "ID"
-        Me.id.Name = "id"
-        Me.id.ReadOnly = True
-        '
-        'Username
-        '
-        Me.Username.Frozen = True
-        Me.Username.HeaderText = "Username"
-        Me.Username.Name = "Username"
-        Me.Username.ReadOnly = True
-        Me.Username.Width = 81
         '
         'txt_nombre
         '
@@ -76,6 +63,7 @@ Partial Class PanelUsuario
         '
         Me.txt_clave.Location = New System.Drawing.Point(133, 68)
         Me.txt_clave.Name = "txt_clave"
+        Me.txt_clave.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_clave.Size = New System.Drawing.Size(384, 20)
         Me.txt_clave.TabIndex = 63
         '
@@ -88,10 +76,45 @@ Partial Class PanelUsuario
         Me.Label1.TabIndex = 64
         Me.Label1.Text = "Clave:"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(76, 20)
+        Me.Label2.TabIndex = 65
+        Me.Label2.Text = "Usuario:"
+        '
+        'id
+        '
+        Me.id.Frozen = True
+        Me.id.HeaderText = "ID"
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
+        Me.id.Visible = False
+        '
+        'Username
+        '
+        Me.Username.Frozen = True
+        Me.Username.HeaderText = "Username"
+        Me.Username.Name = "Username"
+        Me.Username.ReadOnly = True
+        Me.Username.Width = 81
+        '
+        'Password
+        '
+        Me.Password.Frozen = True
+        Me.Password.HeaderText = "Password"
+        Me.Password.Name = "Password"
+        Me.Password.ReadOnly = True
+        Me.Password.Visible = False
+        '
         'PanelUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txt_clave)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.tableUsuario)
@@ -109,7 +132,9 @@ Partial Class PanelUsuario
     Friend WithEvents lbl_nombre As System.Windows.Forms.Label
     Friend WithEvents txt_clave As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Username As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Password As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

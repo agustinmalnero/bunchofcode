@@ -2,25 +2,24 @@
 
     Dim acciones As PanelAcciones
     Dim tareas As PanelTareas
-    Dim month = New MonthView()
+    Dim week As WeekView
     Dim views As Views
     Dim buttons As Controls
     Dim ipanel As IPaneles
     Dim access As DataAccess
     Dim login As Sesion
-    Dim data As DataAccess
-
     Dim buttonsInterface As IButtons
+    Dim usuario As Usuario
 
     Public Sub New()
         InitializeComponent()
-        Me.data = New DataAccess()
-        Me.acciones = New PanelAcciones(Me.centralPanel, Me.buttonsPanel, data)
-        Me.views = New Views(Me.centralPanel)
-        Me.buttons = New Controls(data)
-        Me.tareas = New PanelTareas()
         Me.access = New DataAccess()
-        Me.login = New Sesion(Me)
+        Me.acciones = New PanelAcciones(Me.centralPanel, Me.buttonsPanel, Me.access)
+        Me.views = New Views(Me.centralPanel, Me.access)
+        Me.week = Me.views.obtainMonth()
+        Me.buttons = New Controls(Me.access)
+        Me.tareas = New PanelTareas(Me.access)
+        Me.login = New Sesion(Me, Me.access)
         Me.habilitar(False, "")
     End Sub
 
@@ -30,7 +29,7 @@
             centralPanel.Controls.Clear()
             panelIzquierda.Controls.Add(acciones)
             panelDerecha.Controls.Add(tareas)
-            centralPanel.Controls.Add(month)
+            centralPanel.Controls.Add(week)
             buttonsPanel.Controls.Add(views)
             toolbar.Enabled = True
             lblUsuario.Text = "Usuario: " & name
@@ -44,6 +43,11 @@
             lblUsuario.Text = "Usuario: "
         End If
 
+    End Sub
+
+    Public Sub setUser(ByVal user As Usuario)
+        Me.usuario = user
+        Me.acciones.setUser(Me.usuario)
     End Sub
 
     Private Sub menuUsuario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles menuUsuario.Click

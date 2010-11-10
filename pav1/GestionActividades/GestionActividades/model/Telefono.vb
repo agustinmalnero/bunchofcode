@@ -3,22 +3,24 @@
 
     Dim id As Integer
     Dim numero As String
+    Dim contacto As Integer
 
-    Public Sub New(ByVal id As Integer, ByVal numero As String)
+    Public Sub New(ByVal id As Integer, ByVal numero As String, ByVal contacto As Integer)
         Me.id = id
         Me.numero = numero
+        Me.contacto = contacto
     End Sub
     Public Function columns() As System.Collections.ArrayList Implements IModel.columns
         Dim res As New ArrayList
-        res.Add("id")
         res.Add("numero")
+        res.Add("contacto")
         Return res
     End Function
 
     Public Function data() As System.Collections.ArrayList Implements IModel.data
         Dim res As New ArrayList
-        res.Add(id)
         res.Add(numero)
+        res.Add(contacto)
         Return res
     End Function
 

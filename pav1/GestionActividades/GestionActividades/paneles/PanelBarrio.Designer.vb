@@ -25,6 +25,7 @@ Partial Class PanelBarrio
         Me.lbl_nombre = New System.Windows.Forms.Label
         Me.cboCiudad = New System.Windows.Forms.ComboBox
         Me.bt_mas_ciudad = New System.Windows.Forms.Button
+        Me.Label2 = New System.Windows.Forms.Label
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Barrio = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.id_ciudad = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -87,12 +88,23 @@ Partial Class PanelBarrio
         Me.bt_mas_ciudad.Text = "+"
         Me.bt_mas_ciudad.UseVisualStyleBackColor = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(62, 20)
+        Me.Label2.TabIndex = 71
+        Me.Label2.Text = "Barrio:"
+        '
         'ID
         '
         Me.ID.Frozen = True
         Me.ID.HeaderText = "ID"
         Me.ID.Name = "ID"
         Me.ID.ReadOnly = True
+        Me.ID.Visible = False
         '
         'Barrio
         '
@@ -120,6 +132,7 @@ Partial Class PanelBarrio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.bt_mas_ciudad)
         Me.Controls.Add(Me.cboCiudad)
         Me.Controls.Add(Me.Label1)
@@ -139,6 +152,7 @@ Partial Class PanelBarrio
     Friend WithEvents lbl_nombre As System.Windows.Forms.Label
     Friend WithEvents cboCiudad As System.Windows.Forms.ComboBox
     Friend WithEvents bt_mas_ciudad As System.Windows.Forms.Button
+    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents ID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Barrio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents id_ciudad As System.Windows.Forms.DataGridViewTextBoxColumn

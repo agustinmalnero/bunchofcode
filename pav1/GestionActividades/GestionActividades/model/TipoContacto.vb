@@ -29,6 +29,6 @@
     End Function
 
     Public Function tableName() As String Implements IModel.tableName
-        Return "tipo_contacto"
+        Return "tipocontacto"
     End Function
 End Class
