@@ -22,6 +22,7 @@ Partial Class VentanaGestion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VentanaGestion))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip
         Me.lblUsuario = New System.Windows.Forms.ToolStripStatusLabel
@@ -45,6 +46,7 @@ Partial Class VentanaGestion
         Me.panelDerecha = New System.Windows.Forms.Panel
         Me.centralPanel = New System.Windows.Forms.Panel
         Me.buttonsPanel = New System.Windows.Forms.Panel
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.StatusStrip1.SuspendLayout()
         Me.toolbar.SuspendLayout()
         Me.SuspendLayout()
@@ -219,6 +221,10 @@ Partial Class VentanaGestion
         Me.buttonsPanel.Size = New System.Drawing.Size(177, 126)
         Me.buttonsPanel.TabIndex = 6
         '
+        'Timer1
+        '
+        Me.Timer1.Interval = 60000
+        '
         'VentanaGestion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -265,5 +271,6 @@ Partial Class VentanaGestion
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents btnCancel As System.Windows.Forms.ToolStripButton
     Friend WithEvents AdministrarTipoContactoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
 
 End Class

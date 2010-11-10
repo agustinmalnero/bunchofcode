@@ -28,16 +28,16 @@ Partial Class PanelActividad
         Me.Label4 = New System.Windows.Forms.Label
         Me.txt_descripcion = New System.Windows.Forms.TextBox
         Me.tableActividad = New System.Windows.Forms.DataGridView
-        Me.bt_agregar_tarea = New System.Windows.Forms.Button
-        Me.dtp_inicio = New System.Windows.Forms.DateTimePicker
-        Me.dtp_fin = New System.Windows.Forms.DateTimePicker
-        Me.Label5 = New System.Windows.Forms.Label
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Inicio = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Fin = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.bt_agregar_tarea = New System.Windows.Forms.Button
+        Me.dtp_inicio = New System.Windows.Forms.DateTimePicker
+        Me.dtp_fin = New System.Windows.Forms.DateTimePicker
+        Me.Label5 = New System.Windows.Forms.Label
         CType(Me.tableActividad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -122,39 +122,6 @@ Partial Class PanelActividad
         Me.tableActividad.Size = New System.Drawing.Size(498, 273)
         Me.tableActividad.TabIndex = 21
         '
-        'bt_agregar_tarea
-        '
-        Me.bt_agregar_tarea.Location = New System.Drawing.Point(44, 158)
-        Me.bt_agregar_tarea.Name = "bt_agregar_tarea"
-        Me.bt_agregar_tarea.Size = New System.Drawing.Size(98, 23)
-        Me.bt_agregar_tarea.TabIndex = 6
-        Me.bt_agregar_tarea.Text = "Agrear Tarea"
-        Me.bt_agregar_tarea.UseVisualStyleBackColor = True
-        '
-        'dtp_inicio
-        '
-        Me.dtp_inicio.Location = New System.Drawing.Point(136, 70)
-        Me.dtp_inicio.Name = "dtp_inicio"
-        Me.dtp_inicio.Size = New System.Drawing.Size(175, 20)
-        Me.dtp_inicio.TabIndex = 2
-        '
-        'dtp_fin
-        '
-        Me.dtp_fin.Location = New System.Drawing.Point(342, 70)
-        Me.dtp_fin.Name = "dtp_fin"
-        Me.dtp_fin.Size = New System.Drawing.Size(171, 20)
-        Me.dtp_fin.TabIndex = 3
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(3, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(87, 20)
-        Me.Label5.TabIndex = 66
-        Me.Label5.Text = "Actividad:"
-        '
         'ID
         '
         Me.ID.Frozen = True
@@ -199,6 +166,39 @@ Partial Class PanelActividad
         Me.Fin.Name = "Fin"
         Me.Fin.ReadOnly = True
         Me.Fin.Visible = False
+        '
+        'bt_agregar_tarea
+        '
+        Me.bt_agregar_tarea.Location = New System.Drawing.Point(44, 158)
+        Me.bt_agregar_tarea.Name = "bt_agregar_tarea"
+        Me.bt_agregar_tarea.Size = New System.Drawing.Size(98, 23)
+        Me.bt_agregar_tarea.TabIndex = 6
+        Me.bt_agregar_tarea.Text = "Agrear Tarea"
+        Me.bt_agregar_tarea.UseVisualStyleBackColor = True
+        '
+        'dtp_inicio
+        '
+        Me.dtp_inicio.Location = New System.Drawing.Point(136, 70)
+        Me.dtp_inicio.Name = "dtp_inicio"
+        Me.dtp_inicio.Size = New System.Drawing.Size(175, 20)
+        Me.dtp_inicio.TabIndex = 2
+        '
+        'dtp_fin
+        '
+        Me.dtp_fin.Location = New System.Drawing.Point(342, 70)
+        Me.dtp_fin.Name = "dtp_fin"
+        Me.dtp_fin.Size = New System.Drawing.Size(171, 20)
+        Me.dtp_fin.TabIndex = 3
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(3, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(87, 20)
+        Me.Label5.TabIndex = 66
+        Me.Label5.Text = "Actividad:"
         '
         'PanelActividad
         '
