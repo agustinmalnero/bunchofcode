@@ -134,4 +134,8 @@ Public Class PanelActividad
         Dim table = Me._access.buscar("SELECT * FROM tarea WHERE fk_actividad = " & index)
         Me.tareas.loadTable(table)
     End Sub
+
+    Private Sub PanelActividad_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

@@ -138,4 +138,17 @@
         Me.buttonsPanel.Controls.Add(Me.buttons)
         panelTipoContacto.txt_nombre.Focus()
     End Sub
+
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        'Dim data = Me.access.buscar("SELECT actividad.nombre FROM actividad" & _
+        '                            "WHERE actividad.inicio = " & Format(Now, "yyyy-MM-dd h:mm:ss"))
+        'If data.Rows.Count > 0 Then
+        '    Dim act As String
+        '    For i = 0 To data.Rows.Count() - 1
+        '        act = data.Rows(i)("nombre")
+        '        MsgBox("Inicia la actividad " & act, vbOKOnly + vbCritical, "Alarma")
+        '    Next
+        'End If
+        MsgBox("Inicia la actividad ", vbOKOnly + vbCritical, "Alarma")
+    End Sub
 End Class

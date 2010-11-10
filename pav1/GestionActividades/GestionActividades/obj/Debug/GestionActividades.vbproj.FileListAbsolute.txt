@@ -38,7 +38,6 @@ C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActi
 C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelCiudad.resources
 C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelContacto.resources
 C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelReunion.resources
-C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.Panel.resources
 C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelUsuario.resources
 C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelTareas.resources
 C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.Views.resources
@@ -73,3 +72,7 @@ C:\diego\bunch\pav1\GestionActividades\GestionActividades\bin\Debug\GestionActiv
 C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.Sesion.resources
 C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelTipoContacto.resources
 C:\diego\bunch\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelTarea.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelCategoria.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelTarea.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.PanelTipoContacto.resources
+C:\Documents and Settings\Administrador\Escritorio\pav-tpi-repo\pav1\GestionActividades\GestionActividades\obj\Debug\GestionActividades.Sesion.resources
