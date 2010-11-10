@@ -47,6 +47,7 @@
 
     Private Sub btnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
         Me.guardar()
+        Me.nuevo()
     End Sub
 
     Private Sub btnModificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificar.Click

@@ -42,6 +42,10 @@ Partial Class PanelContacto
         Me.cboBarrio = New System.Windows.Forms.ComboBox
         Me.cboCiudad = New System.Windows.Forms.ComboBox
         Me.tableContacto = New System.Windows.Forms.DataGridView
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.cboTipo = New System.Windows.Forms.ComboBox
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.Label2 = New System.Windows.Forms.Label
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -49,9 +53,7 @@ Partial Class PanelContacto
         Me.Numero = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Barrio = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Ciudad = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.cboTipo = New System.Windows.Forms.ComboBox
-        Me.Label1 = New System.Windows.Forms.Label
+        Me.TipoContacto = New System.Windows.Forms.DataGridViewTextBoxColumn
         CType(Me.tableContacto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -247,12 +249,57 @@ Partial Class PanelContacto
         Me.tableContacto.AllowUserToAddRows = False
         Me.tableContacto.AllowUserToDeleteRows = False
         Me.tableContacto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.tableContacto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nombre, Me.Apellido, Me.Calle, Me.Numero, Me.Barrio, Me.Ciudad})
+        Me.tableContacto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nombre, Me.Apellido, Me.Calle, Me.Numero, Me.Barrio, Me.Ciudad, Me.TipoContacto})
         Me.tableContacto.Location = New System.Drawing.Point(44, 284)
         Me.tableContacto.Name = "tableContacto"
         Me.tableContacto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.tableContacto.Size = New System.Drawing.Size(498, 168)
         Me.tableContacto.TabIndex = 23
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.cboCiudad)
+        Me.GroupBox1.Controls.Add(Me.cboBarrio)
+        Me.GroupBox1.Controls.Add(Me.txt_numero)
+        Me.GroupBox1.Controls.Add(Me.txt_calle)
+        Me.GroupBox1.Controls.Add(Me.lbl_ciudad)
+        Me.GroupBox1.Controls.Add(Me.lbl_barrio)
+        Me.GroupBox1.Controls.Add(Me.lbl_numero)
+        Me.GroupBox1.Controls.Add(Me.lbl_calle)
+        Me.GroupBox1.Location = New System.Drawing.Point(44, 179)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(498, 88)
+        Me.GroupBox1.TabIndex = 24
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Dirección"
+        '
+        'cboTipo
+        '
+        Me.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboTipo.FormattingEnabled = True
+        Me.cboTipo.Location = New System.Drawing.Point(138, 147)
+        Me.cboTipo.Name = "cboTipo"
+        Me.cboTipo.Size = New System.Drawing.Size(230, 21)
+        Me.cboTipo.TabIndex = 17
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(36, 150)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(80, 13)
+        Me.Label1.TabIndex = 28
+        Me.Label1.Text = "Tipo Contacto::"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(87, 20)
+        Me.Label2.TabIndex = 66
+        Me.Label2.Text = "Contacto:"
         '
         'ID
         '
@@ -260,6 +307,7 @@ Partial Class PanelContacto
         Me.ID.HeaderText = "ID"
         Me.ID.Name = "ID"
         Me.ID.ReadOnly = True
+        Me.ID.Visible = False
         '
         'Nombre
         '
@@ -307,45 +355,18 @@ Partial Class PanelContacto
         Me.Ciudad.ReadOnly = True
         Me.Ciudad.Visible = False
         '
-        'GroupBox1
+        'TipoContacto
         '
-        Me.GroupBox1.Controls.Add(Me.cboCiudad)
-        Me.GroupBox1.Controls.Add(Me.cboBarrio)
-        Me.GroupBox1.Controls.Add(Me.txt_numero)
-        Me.GroupBox1.Controls.Add(Me.txt_calle)
-        Me.GroupBox1.Controls.Add(Me.lbl_ciudad)
-        Me.GroupBox1.Controls.Add(Me.lbl_barrio)
-        Me.GroupBox1.Controls.Add(Me.lbl_numero)
-        Me.GroupBox1.Controls.Add(Me.lbl_calle)
-        Me.GroupBox1.Location = New System.Drawing.Point(44, 179)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(498, 88)
-        Me.GroupBox1.TabIndex = 24
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Dirección"
-        '
-        'cboTipo
-        '
-        Me.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboTipo.FormattingEnabled = True
-        Me.cboTipo.Location = New System.Drawing.Point(138, 147)
-        Me.cboTipo.Name = "cboTipo"
-        Me.cboTipo.Size = New System.Drawing.Size(230, 21)
-        Me.cboTipo.TabIndex = 17
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(36, 150)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(80, 13)
-        Me.Label1.TabIndex = 28
-        Me.Label1.Text = "Tipo Contacto::"
+        Me.TipoContacto.Frozen = True
+        Me.TipoContacto.HeaderText = "TipoContacto"
+        Me.TipoContacto.Name = "TipoContacto"
+        Me.TipoContacto.ReadOnly = True
         '
         'PanelContacto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cboTipo)
         Me.Controls.Add(Me.GroupBox1)
@@ -399,6 +420,7 @@ Partial Class PanelContacto
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents cboTipo As System.Windows.Forms.ComboBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents ID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Apellido As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -406,5 +428,6 @@ Partial Class PanelContacto
     Friend WithEvents Numero As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Barrio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Ciudad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TipoContacto As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

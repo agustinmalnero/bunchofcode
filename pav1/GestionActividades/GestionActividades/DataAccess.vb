@@ -20,6 +20,7 @@ Public Class DataAccess
 
     Public Function insertar(ByVal model As IModel)
         Dim cmd As New SqlCommand()
+        Dim rows = 0
         Try
             con.Open()
             cmd.Connection = con
@@ -46,14 +47,20 @@ Public Class DataAccess
             Dim query = "INSERT INTO " & model.tableName() & "(" _
                     & columns & ") " & "VALUES(" + values & ")"
             cmd.CommandText = query
-            Return cmd.ExecuteNonQuery()
+            rows = cmd.ExecuteNonQuery()
         Catch ex As Exception
 
         Finally
             con.Close()
         End Try
 
-        Return 0
+        If rows = 1 Then
+            Dim table = Me.buscar("SELECT * FROM " & model.tableName() & " ORDER BY id DESC")
+            rows = table.Rows(0)("id")
+            Return rows
+        Else
+            Return 0
+        End If
     End Function
 
     Public Sub eliminar(ByVal model As IModel)
@@ -62,6 +69,19 @@ Public Class DataAccess
             con.Open()
             cmd.Connection = con
             Dim query = "DELETE FROM " & model.tableName() & " WHERE id=" & model.getId()
+            cmd.CommandText = query
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+        Finally
+            con.Close()
+        End Try
+    End Sub
+
+    Public Sub execute(ByVal query As String)
+        Dim cmd As New SqlCommand()
+        Try
+            con.Open()
+            cmd.Connection = con
             cmd.CommandText = query
             cmd.ExecuteNonQuery()
         Catch ex As Exception

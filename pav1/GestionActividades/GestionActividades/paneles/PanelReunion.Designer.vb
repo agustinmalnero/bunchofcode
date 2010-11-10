@@ -20,9 +20,8 @@ Partial Class PanelReunion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.cb_actividad = New System.Windows.Forms.ComboBox
-        Me.Button1 = New System.Windows.Forms.Button
         Me.Label4 = New System.Windows.Forms.Label
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView
+        Me.table = New System.Windows.Forms.DataGridView
         Me.gb_lugar = New System.Windows.Forms.GroupBox
         Me.bt_mas_lugar = New System.Windows.Forms.Button
         Me.cb_nombre = New System.Windows.Forms.ComboBox
@@ -37,8 +36,14 @@ Partial Class PanelReunion
         Me.Label8 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.cb_contactos = New System.Windows.Forms.ComboBox
-        Me.bt_mas_contactos = New System.Windows.Forms.Button
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label3 = New System.Windows.Forms.Label
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.fk_actividad = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Actividad = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.fk_lugar = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Lugar = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.fk_contacto = New System.Windows.Forms.DataGridViewTextBoxColumn
+        CType(Me.table, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_lugar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,15 +56,6 @@ Partial Class PanelReunion
         Me.cb_actividad.Size = New System.Drawing.Size(364, 21)
         Me.cb_actividad.TabIndex = 24
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(497, 44)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(23, 23)
-        Me.Button1.TabIndex = 25
-        Me.Button1.Text = "+"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -69,13 +65,18 @@ Partial Class PanelReunion
         Me.Label4.TabIndex = 38
         Me.Label4.Text = "Actividad"
         '
-        'DataGridView1
+        'table
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(44, 244)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(498, 213)
-        Me.DataGridView1.TabIndex = 62
+        Me.table.AllowUserToAddRows = False
+        Me.table.AllowUserToDeleteRows = False
+        Me.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.table.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.fk_actividad, Me.Actividad, Me.fk_lugar, Me.Lugar, Me.fk_contacto})
+        Me.table.Location = New System.Drawing.Point(44, 244)
+        Me.table.MultiSelect = False
+        Me.table.Name = "table"
+        Me.table.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.table.Size = New System.Drawing.Size(498, 213)
+        Me.table.TabIndex = 62
         '
         'gb_lugar
         '
@@ -218,30 +219,76 @@ Partial Class PanelReunion
         Me.cb_contactos.Size = New System.Drawing.Size(364, 21)
         Me.cb_contactos.TabIndex = 60
         '
-        'bt_mas_contactos
+        'Label3
         '
-        Me.bt_mas_contactos.Location = New System.Drawing.Point(496, 207)
-        Me.bt_mas_contactos.Name = "bt_mas_contactos"
-        Me.bt_mas_contactos.Size = New System.Drawing.Size(23, 23)
-        Me.bt_mas_contactos.TabIndex = 61
-        Me.bt_mas_contactos.Text = "+"
-        Me.bt_mas_contactos.UseVisualStyleBackColor = True
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(3, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(81, 20)
+        Me.Label3.TabIndex = 66
+        Me.Label3.Text = "Reunion:"
+        '
+        'ID
+        '
+        Me.ID.Frozen = True
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        Me.ID.Visible = False
+        '
+        'fk_actividad
+        '
+        Me.fk_actividad.Frozen = True
+        Me.fk_actividad.HeaderText = "fk_actividad"
+        Me.fk_actividad.Name = "fk_actividad"
+        Me.fk_actividad.ReadOnly = True
+        Me.fk_actividad.Visible = False
+        '
+        'Actividad
+        '
+        Me.Actividad.Frozen = True
+        Me.Actividad.HeaderText = "Actividad"
+        Me.Actividad.Name = "Actividad"
+        Me.Actividad.ReadOnly = True
+        '
+        'fk_lugar
+        '
+        Me.fk_lugar.Frozen = True
+        Me.fk_lugar.HeaderText = "fk_lugar"
+        Me.fk_lugar.Name = "fk_lugar"
+        Me.fk_lugar.ReadOnly = True
+        Me.fk_lugar.Visible = False
+        '
+        'Lugar
+        '
+        Me.Lugar.Frozen = True
+        Me.Lugar.HeaderText = "Lugar"
+        Me.Lugar.Name = "Lugar"
+        Me.Lugar.ReadOnly = True
+        '
+        'fk_contacto
+        '
+        Me.fk_contacto.Frozen = True
+        Me.fk_contacto.HeaderText = "fk_contacto"
+        Me.fk_contacto.Name = "fk_contacto"
+        Me.fk_contacto.ReadOnly = True
+        Me.fk_contacto.Visible = False
         '
         'PanelReunion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cb_contactos)
-        Me.Controls.Add(Me.bt_mas_contactos)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.table)
         Me.Controls.Add(Me.gb_lugar)
         Me.Controls.Add(Me.cb_actividad)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label4)
         Me.Name = "PanelReunion"
         Me.Size = New System.Drawing.Size(586, 496)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.table, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_lugar.ResumeLayout(False)
         Me.gb_lugar.PerformLayout()
         Me.ResumeLayout(False)
@@ -249,9 +296,8 @@ Partial Class PanelReunion
 
     End Sub
     Friend WithEvents cb_actividad As System.Windows.Forms.ComboBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents table As System.Windows.Forms.DataGridView
     Friend WithEvents gb_lugar As System.Windows.Forms.GroupBox
     Friend WithEvents bt_mas_lugar As System.Windows.Forms.Button
     Friend WithEvents cb_nombre As System.Windows.Forms.ComboBox
@@ -266,6 +312,12 @@ Partial Class PanelReunion
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents cb_contactos As System.Windows.Forms.ComboBox
-    Friend WithEvents bt_mas_contactos As System.Windows.Forms.Button
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents ID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents fk_actividad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Actividad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents fk_lugar As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Lugar As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents fk_contacto As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

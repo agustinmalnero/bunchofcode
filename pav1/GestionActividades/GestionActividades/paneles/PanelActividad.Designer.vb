@@ -27,11 +27,18 @@ Partial Class PanelActividad
         Me.cb_categoria = New System.Windows.Forms.ComboBox
         Me.Label4 = New System.Windows.Forms.Label
         Me.txt_descripcion = New System.Windows.Forms.TextBox
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView
+        Me.tableActividad = New System.Windows.Forms.DataGridView
         Me.bt_agregar_tarea = New System.Windows.Forms.Button
         Me.dtp_inicio = New System.Windows.Forms.DateTimePicker
         Me.dtp_fin = New System.Windows.Forms.DateTimePicker
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label5 = New System.Windows.Forms.Label
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Inicio = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Fin = New System.Windows.Forms.DataGridViewTextBoxColumn
+        CType(Me.tableActividad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_nombre
@@ -102,13 +109,18 @@ Partial Class PanelActividad
         Me.txt_descripcion.Size = New System.Drawing.Size(377, 20)
         Me.txt_descripcion.TabIndex = 5
         '
-        'DataGridView1
+        'tableActividad
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(44, 187)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(498, 273)
-        Me.DataGridView1.TabIndex = 21
+        Me.tableActividad.AllowUserToAddRows = False
+        Me.tableActividad.AllowUserToDeleteRows = False
+        Me.tableActividad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.tableActividad.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nombre, Me.Descripcion, Me.Categoria, Me.Inicio, Me.Fin})
+        Me.tableActividad.Location = New System.Drawing.Point(44, 187)
+        Me.tableActividad.MultiSelect = False
+        Me.tableActividad.Name = "tableActividad"
+        Me.tableActividad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.tableActividad.Size = New System.Drawing.Size(498, 273)
+        Me.tableActividad.TabIndex = 21
         '
         'bt_agregar_tarea
         '
@@ -133,14 +145,70 @@ Partial Class PanelActividad
         Me.dtp_fin.Size = New System.Drawing.Size(171, 20)
         Me.dtp_fin.TabIndex = 3
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(3, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(87, 20)
+        Me.Label5.TabIndex = 66
+        Me.Label5.Text = "Actividad:"
+        '
+        'ID
+        '
+        Me.ID.Frozen = True
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        Me.ID.Visible = False
+        '
+        'Nombre
+        '
+        Me.Nombre.Frozen = True
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        '
+        'Descripcion
+        '
+        Me.Descripcion.Frozen = True
+        Me.Descripcion.HeaderText = "Descripcion"
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.ReadOnly = True
+        '
+        'Categoria
+        '
+        Me.Categoria.Frozen = True
+        Me.Categoria.HeaderText = "Categoria"
+        Me.Categoria.Name = "Categoria"
+        Me.Categoria.ReadOnly = True
+        '
+        'Inicio
+        '
+        Me.Inicio.Frozen = True
+        Me.Inicio.HeaderText = "Inicio"
+        Me.Inicio.Name = "Inicio"
+        Me.Inicio.ReadOnly = True
+        Me.Inicio.Visible = False
+        '
+        'Fin
+        '
+        Me.Fin.Frozen = True
+        Me.Fin.HeaderText = "Fin"
+        Me.Fin.Name = "Fin"
+        Me.Fin.ReadOnly = True
+        Me.Fin.Visible = False
+        '
         'PanelActividad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.dtp_fin)
         Me.Controls.Add(Me.dtp_inicio)
         Me.Controls.Add(Me.bt_agregar_tarea)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.tableActividad)
         Me.Controls.Add(Me.txt_descripcion)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.cb_categoria)
@@ -151,7 +219,7 @@ Partial Class PanelActividad
         Me.Controls.Add(Me.lbl_nombre)
         Me.Name = "PanelActividad"
         Me.Size = New System.Drawing.Size(586, 496)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tableActividad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -164,7 +232,7 @@ Partial Class PanelActividad
     Friend WithEvents cb_categoria As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents txt_descripcion As System.Windows.Forms.TextBox
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents tableActividad As System.Windows.Forms.DataGridView
 
     'Private Sub PanelActividad_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
     '
@@ -172,7 +240,11 @@ Partial Class PanelActividad
     Friend WithEvents bt_agregar_tarea As System.Windows.Forms.Button
     Friend WithEvents dtp_inicio As System.Windows.Forms.DateTimePicker
     Friend WithEvents dtp_fin As System.Windows.Forms.DateTimePicker
-    Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents ID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Categoria As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Inicio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Fin As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

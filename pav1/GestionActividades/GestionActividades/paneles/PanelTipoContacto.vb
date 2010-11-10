@@ -28,7 +28,7 @@
         Me.tableTipoContacto.Rows.Clear()
 
         For c = 0 To data.Rows.Count() - 1
-            Me.tableTipoContacto.Rows.Add(data.Rows(c)("id"), data.Rows(c)("tipo"))
+            Me.tableTipoContacto.Rows.Add(data.Rows(c)("id"), data.Rows(c)("tipo").ToString().Trim())
         Next
     End Sub
 
@@ -36,23 +36,36 @@
         Dim index = Integer.Parse(Me.tableTipoContacto.SelectedCells.Item(0).Value)
         Dim tipoContacto = New TipoContacto(index, Me.txt_nombre.Text)
         _access.eliminar(tipoContacto)
-        Me.txt_nombre.Text = ""
+        Me.reload()
     End Sub
 
     Public Sub guardar() Implements IPaneles.guardar
         Dim tipoContacto = New TipoContacto(0, Me.txt_nombre.Text)
         _access.insertar(tipoContacto)
-        Me.txt_nombre.Text = ""
+        Me.reload()
+    End Sub
+
+    Private Sub reload()
+        Me.nuevo()
+
+        Dim data = _access.buscar("SELECT * FROM tipocontacto")
+        Dim c As Integer
+        Me.tableTipoContacto.Rows.Clear()
+
+        For c = 0 To data.Rows.Count() - 1
+            Me.tableTipoContacto.Rows.Add(data.Rows(c)("id"), data.Rows(c)("tipo").ToString().Trim())
+        Next
     End Sub
 
     Public Sub modificar() Implements IPaneles.modificar
         Dim index = Integer.Parse(Me.tableTipoContacto.SelectedCells.Item(0).Value)
         Dim tipoContacto = New TipoContacto(index, Me.txt_nombre.Text)
         _access.modificar(tipoContacto)
-        Me.txt_nombre.Text = ""
+        Me.reload()
     End Sub
 
     Private Sub tableTipoContacto_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles tableTipoContacto.CellContentClick
         Me.txt_nombre.Text = Me.tableTipoContacto.SelectedCells.Item(1).Value.ToString().Trim()
     End Sub
+
 End Class
